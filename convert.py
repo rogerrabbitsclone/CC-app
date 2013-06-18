@@ -10,11 +10,11 @@ def replaceAll(file,searchExp,replaceExp):
         sys.stdout.write(line)
 
         
-replaceAll("CCC dso 1.xml","#","")
-replaceAll("CCC dso 1.xml","_","")
-replaceAll("CCC dso 1.xml","ISBN/ISSN/HBS","ISBNISSNHBS")
-replaceAll("CCC dso 1.xml","Book/JournalTitle","BookJournalTitle")
-replaceAll("CCC dso 1.xml","ISBN/ISSN/HBS","ISBNISSNHBS")
-replaceAll("CCC dso 1.xml","Volume/IssueofJournal","VolumeIssueofJournal")
-replaceAll("CCC dso 1.xml","Author/EditorofBook","AuthorEditorofBook")
+replaceAll("DSO.xml","#","")
+replaceAll("DSO.xml","_","")
+replaceAll("DSO.xml","ISBN/ISSN/HBS","ISBNISSNHBS")
+replaceAll("DSO.xml","Book/JournalTitle","BookJournalTitle")
+replaceAll("DSO.xml","ISBN/ISSN/HBS","ISBNISSNHBS")
+replaceAll("DSO.xml","Volume/IssueofJournal","VolumeIssueofJournal")
+replaceAll("DSO.xml","Author/EditorofBook","AuthorEditorofBook")
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?><!-- This grammar has been deprecated - use FMPXMLRESULT instead -->
+<FMPDSORESULT xmlns="http://www.filemaker.com/fmpdsoresult">
+<ERRORCODE>0</ERRORCODE>
+<DATABASE>zz  PubChgs 2005-Present.fp7</DATABASE>
+<LAYOUT></LAYOUT>
+
+
+<ROW MODID="1" RECORDID="44947">
+<ArticleAuthor>Robert Hertz</ArticleAuthor>
+<ArticleNumber>11</ArticleNumber>
+<ArticleTitle>Chp 2, The pre-eminence of the right hand</ArticleTitle>
+<AuthorEditorofBook>Tcherkezoff, Serge</AuthorEditorofBook>
+<BookJournalTitle>Dual Classification Reconsidered: Nyamwezi Sacred Kingship and Other Examples</BookJournalTitle>
+<course>Anthro 3</course>
+<DueDate></DueDate>
+<Estneeded>5</Estneeded>
+<instructor>Marianne Ferme</instructor>
+<ISBN/ISSN/HBS>978-0-521-10535-4</ISBN/ISSN/HBS>
+<Item></Item>
+<PageNumbersUsed>3-26</PageNumbersUsed>
+<PublicationDate>2009</PublicationDate>
+<Publisher>Cambridge University Press</Publisher>
+<ReaderNumber>B11</ReaderNumber>
+<School>University of California, Berkeley</School>
+<Semester>2013 Summer</Semester>
+<TotalPagesinBook>168</TotalPagesinBook>
+<Volume/IssueofJournal></Volume/IssueofJournal>
+</ROW>
+
+
+<ROW MODID="1" RECORDID="44948">
+<ArticleAuthor></ArticleAuthor>
+<ArticleNumber>1</ArticleNumber>
+<ArticleTitle>Chp 5, The multiple dimensions of the self</ArticleTitle>
+<Author/EditorofBook>Wallin, D</Author/EditorofBook>
+<Book/JournalTitle>Attachment in Psychotherapy</Book/JournalTitle>
+<course>Couples Counseling</course>
+<DueDate></DueDate>
+<Estneeded>5</Estneeded>
+<instructor>Instructor:  Michael Klein</instructor>
+<ISBN/ISSN/HBS>978-1-59385-456-0</ISBN/ISSN/HBS>
+<Item></Item>
+<PageNumbersUsed>61-83</PageNumbersUsed>
+<PublicationDate>2007</PublicationDate>
+<Publisher>Guilford Press</Publisher>
+<ReaderNumber>SB03</ReaderNumber>
+<School>California Insitute of Integral Studies</School>
+<Semester>2013 Summer</Semester>
+<TotalPagesinBook>382</TotalPagesinBook>
+<Volume/IssueofJournal></Volume/IssueofJournal>
+</ROW>

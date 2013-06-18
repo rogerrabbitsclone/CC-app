@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:49:55" />
+  <title>Connecting Using a Connection String</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp533703"> </a><h1 class="pNewHTMLPageNoNum">
+Connecting Using a Connection String
+</h1>
+<hr /><a name="wp1027254"> </a><p class="pBody">
+If yourapplication requires a connection string to connect to a data source, you must specify the data source name that tells the driver which data source to use for the default connection information. Optionally, you may specify <span style="font-style: italic">attribute</span>=<span style="font-style: italic">value</span> pairs in the connection string to override the default values stored in the data source. 
+</p>
+<a name="wp1027255"> </a><p class="pBody">
+You can specify long or short names in the connection string, which has the format:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+DSN=data_source_name[;<code><em>attribute=value</em></code>[;<code><em>attribute=value</em></code>]...]<a name="wp1027256"> </a>
+</pre></div>
+<a name="wp1027257"> </a><p class="pBody">
+For example, a connection string for SequeLink may look like this:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+DSN=Accounting;DB=EMP;UID=JOHN;PWD=XYZZY<a name="wp1027258"> </a>
+</pre></div>
+<a name="wp1027259"> </a><p class="pBody">
+or
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+DSN=Accounting;DB=&quot;X:IV;EMP&quot;;UID=JOHN;PWD=XYZZY<a name="wp1027260"> </a>
+</pre></div>
+<a name="wp1027261"> </a><p class="pBody">
+NOTE: If the database name (DB) contains a semicolon (;), you must place the name in quotes, as shown in the example above.
+</p>
+<a name="wp1027270"> </a><p class="pBody">
+See <a  href="useodbc7.html#wp525886"><a  href="useodbc7.html#wp531412">&quot;ODBC Connection Attributes&quot;</a> f</a>or a list of ODBC connection attributes and their valid values.
+</p>
+<a name="wp547225"> </a><p class="pBody">
+ 
+</p>
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.writeln(WWHRelatedTopicsInlineHTML());
+   // -->
+  </script>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function  WWHDefineRelatedTopics(ParamRelatedTopics)
+    {
+      ParamRelatedTopics.fAdd("ODBC Connection Attributes", "devref", "useodbc7.html#wp531412");
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

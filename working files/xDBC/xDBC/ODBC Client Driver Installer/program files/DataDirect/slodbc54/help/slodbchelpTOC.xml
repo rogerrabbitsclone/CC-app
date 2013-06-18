@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<WebWorksHelpTOC version="3.0">
+ <i l="preface.html#wp1030783" t="Using This Help File">
+  <i l="preface2.html#wp520525" t="Conventions Used in This Help File">
+   <i l="preface2.html#wp1014283" t="Typographical Conventions" />
+  </i>
+  <i l="preface3.html#wp1011254" t="Contacting Technical Support" />
+ </i>
+ <i l="useodbc.html#wp518140" t="Using the ODBC Client">
+  <i l="useodbc2.html#wp533261" t="About the ODBC Client" />
+  <i l="useodbc3.html#wp533267" t="Using the ODBC Administrator" />
+  <i l="useodbc4.html#wp526977" t="Configuring ODBC Client Data Sources on Windows">
+   <i l="useodbc4.html#wp997337" t="Configuring ODBC User and System Client Data Sources" />
+   <i l="useodbc4.html#wp1011551" t="Configuring ODBC File Client Data Sources" />
+   <i l="useodbc4.html#wp527051" t="ODBC Connection Dialogs" />
+   <i l="useodbc4.html#wp530582" t="Testing ODBC Connections on Windows" />
+  </i>
+  <i l="useodbc5.html#wp1009705" t="Configuring ODBC Client Data Sources on UNIX">
+   <i l="useodbc5.html#wp531342" t="Configuring the System Information File" />
+   <i l="useodbc5.html#wp531203" t="Example: odbc.ini for Solaris" />
+   <i l="useodbc5.html#wp1026551" t="Example: odbc64.ini for Solaris" />
+   <i l="useodbc5.html#wp527183" t="Setting Environment Variables" />
+   <i l="useodbc5.html#wp1025868" t="Using a Centralized System Information File" />
+  </i>
+  <i l="useodbc6.html#wp533703" t="Connecting Using a Connection String" />
+  <i l="useodbc7.html#wp531412" t="ODBC Connection Attributes" />
+ </i>
+ <i l="devodbc.html#wp5509" t="Developing ODBC Applications">
+  <i l="devodbc2.html#wp17281" t="Required ODBC Libraries and Header Files" />
+  <i l="devodbc3.html#wp11597" t="UNIX Compiler Requirements" />
+  <i l="devodbc4.html#wp12063" t="ODBC API Functions">
+   <i l="devodbc4.html#wp49113" t="Support for Unicode ODBC W (Wide) Function Calls" />
+  </i>
+  <i l="devodbc5.html#wp14074" t="SQL Escape Sequences" />
+  <i l="devodbc6.html#wp13701" t="Data Types and Isolation Levels" />
+  <i l="devodbc7.html#wp12401" t="Threading">
+   <i l="devodbc7.html#wp14658" t="Threading Architecture" />
+   <i l="devodbc7.html#wp14173" t="Cancelling Functions in Multithreaded Applications" />
+  </i>
+  <i l="devodbc8.html#wp14576" t="Using Scrollable Cursors">
+   <i l="devodbc8.html#wp12867" t="Static and Keyset-Driven Cursors" />
+   <i l="devodbc8.html#wp12913" t="Using Static Scrollable Cursors" />
+   <i l="devodbc8.html#wp15010" t="Using Keyset-Driven Scrollable Cursors" />
+  </i>
+  <i l="devodbc9.html#wp12923" t="Using Stored Procedures with Oracle" />
+  <i l="devodbc10.html#wp43983" t="Specifying Application IDs">
+   <i l="devodbc10.html#wp17563" t="Specifying Application IDs Explicitly" />
+   <i l="devodbc10.html#wp13037" t="Generating Application IDs Automatically" />
+  </i>
+  <i l="devodbc11.html#wp24757" t="Persisting a Result Set as an XML Data File" />
+  <i l="devodbc12.html#wp44682" t="Error Handling">
+   <i l="devodbc12.html#wp47821" t="SequeLink for ODBC Driver Errors" />
+   <i l="devodbc12.html#wp47827" t="SequeLink Client Errors" />
+   <i l="devodbc12.html#wp47839" t="SequeLink Server Errors" />
+   <i l="devodbc12.html#wp47859" t="Database Errors" />
+  </i>
+  <i l="devodbc13.html#wp16794" t="Developing Performance-Optimized ODBC Applications">
+   <i l="devodbc13.html#wp13229" t="Catalog Functions" />
+   <i l="devodbc13.html#wp13297" t="Retrieving Data" />
+   <i l="devodbc13.html#wp13350" t="ODBC Function Selection" />
+   <i l="devodbc13.html#wp13392" t="Designing ODBC Applications" />
+   <i l="devodbc13.html#wp13405" t="Updating Data" />
+  </i>
+ </i>
+ <i l="scalarfn.html#wp24852" t="SQL Escape Sequences">
+  <i l="scalarfn2.html#wp17272" t="Date, Time, and Timestamp Escape Sequences" />
+  <i l="scalarfn3.html#wp17303" t="Scalar Functions">
+   <i l="scalarfn3.html#wp25116" t="String Functions" />
+   <i l="scalarfn3.html#wp17819" t="Numeric Functions" />
+   <i l="scalarfn3.html#wp17964" t="Date and Time Functions" />
+   <i l="scalarfn3.html#wp18096" t="System Functions" />
+  </i>
+  <i l="scalarfn4.html#wp17379" t="Like Predicate Escape Characters" />
+  <i l="scalarfn5.html#wp17386" t="Outer Join Escape Sequences" />
+  <i l="scalarfn6.html#wp66406" t="Procedure Call Escape Sequences" />
+ </i>
+ <i l="datatype.html#wp65645" t="Data Types and Isolation Levels">
+  <i l="datatype2.html#wp821285" t="Supported Data Types">
+   <i l="datatype2.html#wp821349" t="DB2 on OS/390" />
+   <i l="datatype2.html#wp835078" t="DB2 UDB V7, V8" />
+   <i l="datatype3.html#wp783736" t="Informix 9" />
+   <i l="datatype4.html#wp783999" t="Microsoft SQL Server 7, 2000" />
+   <i l="datatype5.html#wp784274" t="Oracle8, Oracle9i" />
+   <i l="datatype6.html#wp784403" t="Sybase" />
+  </i>
+  <i l="datatype7.html#wp880640" t="Isolation Levels" />
+ </i>
+</WebWorksHelpTOC>

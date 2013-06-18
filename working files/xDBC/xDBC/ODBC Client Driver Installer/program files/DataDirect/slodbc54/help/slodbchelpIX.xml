@@ -1,0 +1,1183 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<WebWorksHelpIX version="3.0">
+ <i t=".NET data provider">
+  <i t="data types supported">
+   <i t="DB2 on OS/390">
+    <j l="datatype2.html#wp821349" />
+   </i>
+   <i t="Informix">
+    <j l="datatype3.html#wp783736" />
+   </i>
+   <i t="Microsoft SQL Server">
+    <j l="datatype4.html#wp783999" />
+   </i>
+   <i t="Oracle8">
+    <j l="datatype5.html#wp784274" />
+   </i>
+   <i t="Oracle9i">
+    <j l="datatype5.html#wp784274" />
+   </i>
+   <i t="Sybase">
+    <j l="datatype6.html#wp784403" />
+   </i>
+  </i>
+ </i>
+ <i t="ABS function">
+  <j l="scalarfn3.html#wp17845" />
+ </i>
+ <i t="ACOS function">
+  <j l="scalarfn3.html#wp17850" />
+ </i>
+ <i t="API functions">
+  <j l="devodbc4.html#wp12063" />
+ </i>
+ <i t="application developers">
+  <i t="ODBC">
+   <j l="devodbc2.html#wp11564" />
+  </i>
+ </i>
+ <i t="application ID">
+  <i t="generating automatically">
+   <j l="devodbc10.html#wp13037" />
+  </i>
+  <i t="specifying explicitly">
+   <j l="devodbc10.html#wp17563" />
+  </i>
+ </i>
+ <i t="ApplicationID ODBC connection attribute">
+  <j l="useodbc7.html#wp532540" />
+ </i>
+ <i t="ApplicationName">
+  <i t="ODBC Client">
+   <j l="useodbc7.html#wp553712" />
+  </i>
+ </i>
+ <i t="arguments, null">
+  <j l="devodbc13.html#wp13249" />
+ </i>
+ <i t="ASCII">
+  <i t="converting to character">
+   <j l="scalarfn3.html#wp17704" />
+  </i>
+  <i t="function">
+   <j l="scalarfn3.html#wp17704" />
+  </i>
+ </i>
+ <i t="ASIN function">
+  <j l="scalarfn3.html#wp17855" />
+ </i>
+ <i t="ATAN function">
+  <j l="scalarfn3.html#wp17860" />
+ </i>
+ <i t="ATAN2 function">
+  <j l="scalarfn3.html#wp17864" />
+ </i>
+ <i t="attributes">
+  <i t="ODBC">
+   <j l="useodbc7.html#wp532532" />
+  </i>
+ </i>
+ <i t="AutomaticApplicationID ODBC connection attribute">
+  <j l="useodbc7.html#wp532545" />
+ </i>
+ <i t="blanks, generating">
+  <j l="scalarfn3.html#wp17806" />
+ </i>
+ <i t="BlockFetchForUpdate">
+  <j l="useodbc7.html#wp532550" />
+ </i>
+ <i t="bound columns">
+  <j l="devodbc13.html#wp13316" />
+ </i>
+ <i t="catalog functions">
+  <i t="defined">
+   <j l="devodbc13.html#wp13229" />
+  </i>
+  <i t="effect on performance">
+   <j l="devodbc13.html#wp13245" />
+  </i>
+ </i>
+ <i t="CEILING function">
+  <j l="scalarfn3.html#wp17869" />
+ </i>
+ <i t="centralized system information file">
+  <j l="useodbc5.html#wp1025868" />
+ </i>
+ <i t="CHAR function">
+  <j l="scalarfn3.html#wp17713" />
+ </i>
+ <i t="Client">
+  <i t="SequeLink for ODBC">
+   <j l="useodbc2.html#wp533261" />
+  </i>
+ </i>
+ <i t="client data sources">
+  <i t="configuring">
+   <i t="ODBC file">
+    <j l="useodbc4.html#wp1011551" />
+   </i>
+   <i t="ODBC User and System">
+    <j l="useodbc4.html#wp997337" />
+   </i>
+   <i t="on UNIX">
+    <j l="useodbc5.html#wp531342" />
+   </i>
+  </i>
+  <i t="creating">
+   <i t="ODBC">
+    <j l="useodbc3.html#wp533267" />
+   </i>
+  </i>
+ </i>
+ <i t="committing data">
+  <j l="devodbc13.html#wp13400" />
+ </i>
+ <i t="compiler requirements, UNIX">
+  <j l="devodbc3.html#wp11597" />
+ </i>
+ <i t="CONCAT function">
+  <j l="scalarfn3.html#wp17726" />
+ </i>
+ <i t="configuring">
+  <i t="file client data sources">
+   <j l="useodbc4.html#wp1011551" />
+  </i>
+  <i t="ODBC client data source for UNIX">
+   <j l="useodbc5.html#wp531342" />
+  </i>
+ </i>
+ <i t="connection">
+  <i t="attributes in ODBC">
+   <j l="useodbc7.html#wp532532" />
+  </i>
+  <i t="handles">
+   <j l="devodbc13.html#wp13398" />
+  </i>
+  <i t="managing">
+   <j l="devodbc13.html#wp13394" />
+  </i>
+  <i t="ODBC options">
+   <j l="useodbc.html#wp518140" />
+  </i>
+  <i t="testing ODBC on Windows">
+   <j l="useodbc4.html#wp530582" />
+  </i>
+ </i>
+ <i t="connection pooling">
+  <i t="ODBC driver">
+   <j l="devodbc13.html#wp13399" />
+  </i>
+ </i>
+ <i t="contacting Technical Support">
+  <j l="preface3.html#wp1028101" />
+ </i>
+ <i t="conventions used in this book">
+  <j l="preface2.html#wp520525" />
+ </i>
+ <i t="COS function">
+  <j l="scalarfn3.html#wp17875" />
+ </i>
+ <i t="COT function">
+  <j l="scalarfn3.html#wp17880" />
+ </i>
+ <i t="creating">
+  <i t="ODBC Client data sources">
+   <j l="useodbc3.html#wp533267" />
+  </i>
+ </i>
+ <i t="CURDATE function">
+  <j l="scalarfn3.html#wp65626" />
+ </i>
+ <i t="cursors">
+  <i t="keyset-driven scrollable (ODBC)">
+   <j l="devodbc8.html#wp12870" />
+  </i>
+  <i t="static scrollable (ODBC)">
+   <j l="devodbc8.html#wp12870" />
+  </i>
+  <i t="support for scrollable (ODBC)">
+   <j l="devodbc8.html#wp12883" />
+  </i>
+  <i t="using scrollable instead of cursor library (ODBC)">
+   <j l="devodbc13.html#wp13381" />
+  </i>
+ </i>
+ <i t="CURTIME function">
+  <j l="scalarfn3.html#wp65643" />
+ </i>
+ <i t="data source">
+  <i t="configuring">
+   <i t="on UNIX (ODBC)">
+    <j l="useodbc5.html#wp1009705" />
+   </i>
+   <i t="User and System (ODBC)">
+    <j l="useodbc4.html#wp997337" />
+   </i>
+  </i>
+  <i t="creating">
+   <i t="ODBC file client">
+    <j l="useodbc4.html#wp1011551" />
+   </i>
+   <i t="ODBC system">
+    <j l="useodbc4.html#wp997337" />
+   </i>
+   <i t="ODBC user">
+    <j l="useodbc4.html#wp997337" />
+   </i>
+  </i>
+  <i t="system">
+   <j l="useodbc4.html#wp997337" />
+  </i>
+  <i t="user">
+   <j l="useodbc4.html#wp997337" />
+  </i>
+ </i>
+ <i t="data types">
+  <i t="DB2 on OS/390">
+   <j l="datatype2.html#wp821349" />
+  </i>
+  <i t="DB2 UDB">
+   <j l="datatype2.html#wp835078" />
+  </i>
+  <i t="Informix 9">
+   <j l="datatype3.html#wp783736" />
+  </i>
+  <i t="Microsoft SQL Server">
+   <j l="datatype4.html#wp783999" />
+  </i>
+  <i t="Oracle8, Oracle9i">
+   <j l="datatype5.html#wp784274" />
+  </i>
+  <i t="Sybase">
+   <j l="datatype6.html#wp784403" />
+  </i>
+ </i>
+ <i t="database">
+  <i t="data dictionary">
+   <j l="devodbc13.html#wp15577" />
+  </i>
+  <i t="meta-information, retrieving">
+   <j l="devodbc13.html#wp20988" />
+  </i>
+ </i>
+ <i t="Database connection attribute">
+  <i t="ODBC driver">
+   <j l="useodbc7.html#wp532556" />
+  </i>
+ </i>
+ <i t="Database Data Dictionary">
+  <i t="filters">
+   <j l="devodbc13.html#wp15386" />
+  </i>
+  <i t="views (DB2 for z/OS)">
+   <j l="devodbc13.html#wp21136" />
+  </i>
+ </i>
+ <i t="DATABASE function">
+  <j l="scalarfn3.html#wp18113" />
+ </i>
+ <i t="database-specific information">
+  <j l="datatype.html#wp65645" />
+ </i>
+ <i t="date">
+  <i t="returning current">
+   <j l="scalarfn3.html#wp65626" />
+  </i>
+  <i t="returning month">
+   <j l="scalarfn3.html#wp65686" />
+  </i>
+  <i t="returning year">
+   <j l="scalarfn3.html#wp65727" />
+  </i>
+  <i t="scalar functions">
+   <j l="scalarfn3.html#wp17969" />
+  </i>
+ </i>
+ <i t="DAYNAME function">
+  <j l="scalarfn3.html#wp65647" />
+ </i>
+ <i t="DAYOFMONTH function">
+  <j l="scalarfn3.html#wp65652" />
+ </i>
+ <i t="DAYOFWEEK function">
+  <j l="scalarfn3.html#wp65657" />
+ </i>
+ <i t="DAYOFYEAR function">
+  <j l="scalarfn3.html#wp65662" />
+ </i>
+ <i t="DB2 for OS/390">
+  <i t="data types supported">
+   <j l="datatype2.html#wp821349" />
+  </i>
+  <i t="Database Data Dictionary views">
+   <j l="devodbc13.html#wp21136" />
+  </i>
+  <i t="support for scrollable cursors (ODBC)">
+   <j l="devodbc8.html#wp12895" />
+  </i>
+ </i>
+ <i t="DB2 UDB">
+  <i t="data types">
+   <j l="datatype2.html#wp835078" />
+  </i>
+  <i t="support for scrollable cursors (ODBC)">
+   <j l="devodbc8.html#wp18757" />
+  </i>
+ </i>
+ <i t="DBPassword">
+  <j l="useodbc7.html#wp532568" />
+ </i>
+ <i t="defining">
+  <i t="data source using the ODBC Administrator">
+   <j l="useodbc4.html#wp997337" />
+  </i>
+ </i>
+ <i t="DEGREES function">
+  <j l="scalarfn3.html#wp17884" />
+ </i>
+ <i t="deletes, positional">
+  <j l="devodbc13.html#wp13407" />
+ </i>
+ <i t="developing ODBC applications">
+  <j l="devodbc2.html#wp11564" />
+ </i>
+ <i t="DIFFERENCE function">
+  <j l="scalarfn3.html#wp17731" />
+ </i>
+ <i t="DistinguishedName attribute">
+  <i t="ODBC">
+   <j l="useodbc7.html#wp532573" />
+  </i>
+ </i>
+ <i t="DSN connection attribute">
+  <j l="useodbc7.html#wp532560" />
+ </i>
+ <i t="EnableDescribeParam">
+  <j l="useodbc7.html#wp532577" />
+ </i>
+ <i t="environment variables (UNIX)">
+  <j l="useodbc5.html#wp527183" />
+ </i>
+ <i t="error handling">
+  <i t="ODBC driver">
+   <j l="devodbc12.html#wp44682" />
+  </i>
+ </i>
+ <i t="examples">
+  <i t="odbc.ini file configured for Solaris">
+   <j l="useodbc5.html#wp531203" />
+  </i>
+  <i t="odbc64.ini file configured for Solaris">
+   <j l="useodbc5.html#wp1026551" />
+  </i>
+ </i>
+ <i t="EXP function">
+  <j l="scalarfn3.html#wp17890" />
+ </i>
+ <i t="EXTRACT function">
+  <j l="scalarfn3.html#wp65668" />
+ </i>
+ <i t="FetchNextOnly">
+  <j l="useodbc7.html#wp532584" />
+ </i>
+ <i t="file client data sources, configuring">
+  <j l="useodbc4.html#wp1011551" />
+ </i>
+ <i t="filters, Database Data Dictionary">
+  <j l="devodbc13.html#wp15386" />
+ </i>
+ <i t="FixCharTrim">
+  <j l="useodbc7.html#wp532589" />
+ </i>
+ <i t="FLOOR function">
+  <j l="scalarfn3.html#wp17895" />
+ </i>
+ <i t="forward only cursors">
+  <j l="devodbc13.html#wp13334" />
+ </i>
+ <i t="functions">
+  <i t="cancelling in multithreaded applications">
+   <j l="devodbc7.html#wp14173" />
+  </i>
+  <i t="date and time">
+   <j l="scalarfn3.html#wp17969" />
+  </i>
+  <i t="numeric">
+   <j l="scalarfn3.html#wp17824" />
+  </i>
+  <i t="ODBC API">
+   <j l="devodbc4.html#wp12063" />
+  </i>
+  <i t="scalar">
+   <j l="scalarfn3.html#wp17303" />
+  </i>
+  <i t="string">
+   <j l="scalarfn3.html#wp25116" />
+  </i>
+ </i>
+ <i t="generating ODBC application IDs automatically">
+  <j l="devodbc10.html#wp13037" />
+ </i>
+ <i t="GetOutputParams">
+  <j l="useodbc7.html#wp532594" />
+ </i>
+ <i t="header files and libraries, platform-specific">
+  <j l="devodbc2.html#wp11564" />
+ </i>
+ <i t="HLogonID">
+  <j l="useodbc7.html#wp532599" />
+ </i>
+ <i t="Host attribute">
+  <j l="useodbc7.html#wp532607" />
+ </i>
+ <i t="host password">
+  <j l="useodbc7.html#wp532603" />
+ </i>
+ <i t="HOUR function">
+  <j l="scalarfn3.html#wp65675" />
+ </i>
+ <i t="HPassword">
+  <j l="useodbc7.html#wp532603" />
+ </i>
+ <i t="IFNULL function">
+  <j l="scalarfn3.html#wp18119" />
+ </i>
+ <i t="Informix 9">
+  <i t="data types">
+   <j l="datatype3.html#wp783736" />
+  </i>
+  <i t="persisting result set as XML">
+   <j l="devodbc11.html#wp24757" />
+  </i>
+  <i t="support for scrollable cursors (ODBC)">
+   <j l="devodbc8.html#wp18188" />
+  </i>
+ </i>
+ <i t="INSERT function">
+  <j l="scalarfn3.html#wp17736" />
+ </i>
+ <i t="isolation levels">
+  <i t="by data store">
+   <j l="datatype7.html#wp880640" />
+  </i>
+  <i t="ODBC driver">
+   <j l="devodbc6.html#wp13701" />
+  </i>
+ </i>
+ <i t="JDBC driver">
+  <i t="data types supported">
+   <i t="DB2 on OS/390">
+    <j l="datatype2.html#wp821349" />
+   </i>
+   <i t="Informix">
+    <j l="datatype3.html#wp783736" />
+   </i>
+   <i t="Microsoft SQL Server">
+    <j l="datatype4.html#wp783999" />
+   </i>
+   <i t="Oracle8">
+    <j l="datatype5.html#wp784274" />
+   </i>
+   <i t="Oracle9i">
+    <j l="datatype5.html#wp784274" />
+   </i>
+   <i t="Sybase">
+    <j l="datatype6.html#wp784403" />
+   </i>
+  </i>
+ </i>
+ <i t="keyset-driven scrollable cursors (ODBC)">
+  <j l="devodbc8.html#wp12870" />
+  <j l="devodbc8.html#wp15010" />
+ </i>
+ <i t="LCASE function">
+  <j l="scalarfn3.html#wp17741" />
+ </i>
+ <i t="LDAP">
+  <i t="specifying port for the listener">
+   <j l="useodbc7.html#wp532627" />
+  </i>
+  <i t="TCP/IP address of the LDAP server">
+   <j l="useodbc7.html#wp532607" />
+  </i>
+  <i t="UseLDAP attribute (ODBC)">
+   <j l="useodbc7.html#wp532655" />
+  </i>
+ </i>
+ <i t="LEFT function">
+  <j l="scalarfn3.html#wp17748" />
+ </i>
+ <i t="LENGTH function">
+  <j l="scalarfn3.html#wp17752" />
+ </i>
+ <i t="libraries and header files, platform-specific">
+  <j l="devodbc2.html#wp11564" />
+ </i>
+ <i t="LOCATE function">
+  <j l="scalarfn3.html#wp17758" />
+ </i>
+ <i t="LOG function">
+  <j l="scalarfn3.html#wp17900" />
+ </i>
+ <i t="LOG10 function">
+  <j l="scalarfn3.html#wp17905" />
+ </i>
+ <i t="LogonID">
+  <j l="useodbc7.html#wp532612" />
+ </i>
+ <i t="long data, performance issues with retrieving">
+  <j l="devodbc13.html#wp13299" />
+ </i>
+ <i t="LTRIM function">
+  <j l="scalarfn3.html#wp17763" />
+ </i>
+ <i t="managing">
+  <i t="connections to improve driver performance">
+   <j l="devodbc13.html#wp13394" />
+  </i>
+  <i t="retrieval of database meta-information">
+   <j l="devodbc13.html#wp20988" />
+  </i>
+ </i>
+ <i t="mapping data types">
+  <i t="supported by DB2 on OS/390">
+   <j l="datatype2.html#wp821349" />
+  </i>
+  <i t="supported by DB2 UDB">
+   <j l="datatype2.html#wp835078" />
+  </i>
+  <i t="supported by Informix 9">
+   <j l="datatype3.html#wp783736" />
+  </i>
+  <i t="supported by Microsoft SQL Server">
+   <j l="datatype4.html#wp783999" />
+  </i>
+  <i t="supported by Oracle8">
+   <j l="datatype5.html#wp784274" />
+  </i>
+  <i t="supported by Oracle9i">
+   <j l="datatype5.html#wp784274" />
+  </i>
+  <i t="supported by Sybase">
+   <j l="datatype6.html#wp784403" />
+  </i>
+ </i>
+ <i t="meta-information">
+  <i t="limiting amount to be retrieved">
+   <j l="devodbc13.html#wp15386" />
+  </i>
+  <i t="managing retrieval of">
+   <j l="devodbc13.html#wp15577" />
+  </i>
+ </i>
+ <i t="Microsoft SQL Server">
+  <i t="data types supported">
+   <j l="datatype4.html#wp783999" />
+  </i>
+  <i t="support for scrollable cursors (ODBC)">
+   <j l="devodbc8.html#wp18432" />
+  </i>
+ </i>
+ <i t="MINUTE function">
+  <j l="scalarfn3.html#wp65680" />
+ </i>
+ <i t="MOD function">
+  <j l="scalarfn3.html#wp17909" />
+ </i>
+ <i t="MONTH function">
+  <j l="scalarfn3.html#wp65686" />
+ </i>
+ <i t="MONTHNAME function">
+  <j l="scalarfn3.html#wp65690" />
+ </i>
+ <i t="multithreaded applications">
+  <i t="cancelling functions">
+   <j l="devodbc7.html#wp14173" />
+  </i>
+  <i t="functionality of the ODBC driver">
+   <j l="devodbc7.html#wp15843" />
+  </i>
+ </i>
+ <i t="NewPassword">
+  <j l="useodbc7.html#wp532616" />
+ </i>
+ <i t="NOW function">
+  <j l="scalarfn3.html#wp65696" />
+ </i>
+ <i t="null arguments, impact on performance">
+  <j l="devodbc13.html#wp13249" />
+ </i>
+ <i t="Number">
+  <i t="raising to power">
+   <j l="scalarfn3.html#wp17921" />
+  </i>
+  <i t="rounding">
+   <j l="scalarfn3.html#wp17935" />
+  </i>
+ </i>
+ <i t="numeric functions">
+  <j l="scalarfn3.html#wp17824" />
+ </i>
+ <i t="ODBC">
+  <i t="functions that improve driver performance">
+   <j l="devodbc13.html#wp13350" />
+  </i>
+  <i t="keyset-driven scrollable cursors">
+   <j l="devodbc8.html#wp15010" />
+  </i>
+  <i t="Level 2.x API functions">
+   <j l="devodbc4.html#wp12063" />
+  </i>
+  <i t="Level 3.x API functions">
+   <j l="devodbc4.html#wp12229" />
+  </i>
+  <i t="optimizing performance">
+   <j l="devodbc13.html#wp16794" />
+  </i>
+  <i t="static scrollable cursors">
+   <j l="devodbc8.html#wp12870" />
+   <j l="devodbc8.html#wp12913" />
+  </i>
+ </i>
+ <i t="ODBC Administrator">
+  <i t="configuring file client data sources">
+   <j l="useodbc4.html#wp1011551" />
+  </i>
+  <i t="configuring User and System client data sources">
+   <j l="useodbc4.html#wp997337" />
+  </i>
+  <i t="starting">
+   <j l="useodbc3.html#wp1026432" />
+  </i>
+ </i>
+ <i t="ODBC driver">
+  <i t="application IDs">
+   <j l="devodbc10.html#wp43983" />
+  </i>
+  <i t="cancelling functions in multithreaded applications">
+   <j l="devodbc7.html#wp14173" />
+  </i>
+  <i t="configuring file client data sources">
+   <j l="useodbc4.html#wp1011551" />
+  </i>
+  <i t="connecting to a data source using a logon dialog box">
+   <j l="useodbc4.html#wp527051" />
+  </i>
+  <i t="connection attributes">
+   <j l="useodbc7.html#wp532532" />
+  </i>
+  <i t="connection options">
+   <j l="useodbc.html#wp518140" />
+  </i>
+  <i t="error handling">
+   <j l="devodbc12.html#wp44682" />
+  </i>
+  <i t="handling Unicode characters">
+   <j l="useodbc7.html#wp532642" />
+  </i>
+  <i t="ODBC API functions supported">
+   <j l="devodbc4.html#wp12063" />
+  </i>
+  <i t="overview">
+   <j l="useodbc2.html#wp533261" />
+  </i>
+  <i t="persisting result set as XML data file">
+   <j l="devodbc11.html#wp24757" />
+  </i>
+  <i t="required libraries and header files">
+   <j l="devodbc2.html#wp17281" />
+  </i>
+  <i t="specification supported">
+   <j l="useodbc2.html#wp533262" />
+  </i>
+  <i t="threading">
+   <j l="devodbc7.html#wp12401" />
+  </i>
+  <i t="using the system information file">
+   <j l="useodbc5.html#wp531342" />
+  </i>
+ </i>
+ <i t="odbc.ini (UNIX)">
+  <i t="example">
+   <j l="useodbc5.html#wp1026531" />
+  </i>
+  <i t="sample odbc.ini file">
+   <j l="useodbc5.html#wp531203" />
+  </i>
+  <i t="using a centralized odbc.ini file">
+   <j l="useodbc5.html#wp1025868" />
+  </i>
+ </i>
+ <i t="odbc64.ini (UNIX)">
+  <i t="centralized">
+   <j l="useodbc5.html#wp1025868" />
+  </i>
+  <i t="example">
+   <j l="useodbc5.html#wp1026551" />
+  </i>
+ </i>
+ <i t="ODBCINI environment variable (UNIX)">
+  <j l="useodbc5.html#wp527183" />
+ </i>
+ <i t="ODBCTest">
+  <j l="devodbc9.html#wp12975" />
+ </i>
+ <i t="Oracle8">
+  <i t="data types">
+   <j l="datatype5.html#wp784274" />
+  </i>
+  <i t="support for scrollable cursors (ODBC)">
+   <j l="devodbc8.html#wp12907" />
+  </i>
+  <i t="using stored procedures with (ODBC)">
+   <j l="devodbc9.html#wp12923" />
+  </i>
+ </i>
+ <i t="Oracle9i">
+  <i t="data types">
+   <j l="datatype5.html#wp784274" />
+  </i>
+  <i t="support for scrollable cursors (ODBC)">
+   <j l="devodbc8.html#wp12907" />
+  </i>
+  <i t="using stored procedures with (ODBC)">
+   <j l="devodbc9.html#wp12923" />
+  </i>
+ </i>
+ <i t="Password">
+  <i t="ODBC connection attribute">
+   <j l="useodbc7.html#wp532623" />
+  </i>
+ </i>
+ <i t="performance hints">
+  <i t="choosing the data type">
+   <j l="datatype2.html#wp821287" />
+  </i>
+  <i t="committing data">
+   <j l="devodbc13.html#wp13400" />
+  </i>
+  <i t="ODBC driver">
+   <i t="avoiding the cursor library">
+    <j l="devodbc13.html#wp13381" />
+   </i>
+   <i t="catalog functions">
+    <j l="devodbc13.html#wp13229" />
+   </i>
+   <i t="locking a row when isolation level is Read committed">
+    <j l="useodbc7.html#wp532554" />
+   </i>
+   <i t="managing connections">
+    <j l="devodbc13.html#wp13394" />
+   </i>
+   <i t="managing retrieval of database meta-information">
+    <j l="devodbc13.html#wp15577" />
+   </i>
+   <i t="null arguments">
+    <j l="devodbc13.html#wp13249" />
+   </i>
+   <i t="reducing the size of retrieved data">
+    <j l="devodbc13.html#wp13303" />
+   </i>
+   <i t="retrieving data with SQLExtendedFetch">
+    <j l="devodbc13.html#wp13334" />
+   </i>
+   <i t="updating data in databases">
+    <j l="devodbc13.html#wp13405" />
+   </i>
+   <i t="using a dummy query">
+    <j l="devodbc13.html#wp13267" />
+   </i>
+  </i>
+  <i t="using bound columns">
+   <j l="devodbc13.html#wp13316" />
+  </i>
+ </i>
+ <i t="persisting">
+  <i t="result set as XML data file (ODBC)">
+   <j l="devodbc11.html#wp24757" />
+  </i>
+ </i>
+ <i t="PI function">
+  <j l="scalarfn3.html#wp17915" />
+ </i>
+ <i t="platform-specific header files and libraries">
+  <j l="devodbc2.html#wp11564" />
+ </i>
+ <i t="Port (ODBC connection attribute)">
+  <j l="useodbc7.html#wp532627" />
+ </i>
+ <i t="positional updates and deletes">
+  <j l="devodbc13.html#wp13407" />
+ </i>
+ <i t="POWER function">
+  <j l="scalarfn3.html#wp17921" />
+ </i>
+ <i t="pseudo-columns">
+  <j l="devodbc13.html#wp13410" />
+ </i>
+ <i t="QUARTER function">
+  <j l="scalarfn3.html#wp65701" />
+ </i>
+ <i t="RADIANS function">
+  <j l="scalarfn3.html#wp17925" />
+ </i>
+ <i t="RAND function">
+  <j l="scalarfn3.html#wp17930" />
+ </i>
+ <i t="REPEAT function">
+  <j l="scalarfn3.html#wp17777" />
+ </i>
+ <i t="REPLACE function">
+  <j l="scalarfn3.html#wp17782" />
+ </i>
+ <i t="retrieving">
+  <i t="data">
+   <i t="avoiding long data">
+    <j l="devodbc13.html#wp13299" />
+   </i>
+   <i t="reducing the size">
+    <j l="devodbc13.html#wp13303" />
+   </i>
+   <i t="using bound columns">
+    <j l="devodbc13.html#wp13316" />
+   </i>
+   <i t="using SQLExtendedFetch">
+    <j l="devodbc13.html#wp13334" />
+   </i>
+  </i>
+  <i t="database meta-information">
+   <j l="devodbc13.html#wp20988" />
+  </i>
+ </i>
+ <i t="RIGHT function">
+  <j l="scalarfn3.html#wp17788" />
+ </i>
+ <i t="ROUND function">
+  <j l="scalarfn3.html#wp17935" />
+ </i>
+ <i t="RTRIM function">
+  <j l="scalarfn3.html#wp17792" />
+ </i>
+ <i t="scalar functions">
+  <i t="support for">
+   <j l="scalarfn3.html#wp17303" />
+  </i>
+ </i>
+ <i t="scrollable cursors">
+  <i t="using keyset-driven (ODBC)">
+   <j l="devodbc8.html#wp15010" />
+  </i>
+  <i t="using static (ODBC)">
+   <j l="devodbc8.html#wp12913" />
+  </i>
+  <i t="using with ODBC driver">
+   <j l="devodbc8.html#wp12866" />
+  </i>
+ </i>
+ <i t="SECOND function">
+  <j l="scalarfn3.html#wp65706" />
+ </i>
+ <i t="SequeLink for ADO provider">
+  <i t="data types">
+   <i t="DB2 on OS/390">
+    <j l="datatype2.html#wp821349" />
+   </i>
+   <i t="DB2 UDB">
+    <j l="datatype2.html#wp835078" />
+   </i>
+   <i t="Informix 9">
+    <j l="datatype3.html#wp783736" />
+   </i>
+   <i t="Microsoft SQL Server">
+    <j l="datatype4.html#wp783999" />
+   </i>
+   <i t="Oracle8">
+    <j l="datatype5.html#wp784274" />
+   </i>
+   <i t="Oracle9i">
+    <j l="datatype5.html#wp784274" />
+   </i>
+   <i t="Sybase">
+    <j l="datatype6.html#wp784403" />
+   </i>
+  </i>
+ </i>
+ <i t="SequeLink for ODBC driver">
+  <i t="configuring file client data sources">
+   <j l="useodbc4.html#wp1011551" />
+  </i>
+  <i t="connection dialogs">
+   <j l="useodbc4.html#wp527051" />
+  </i>
+  <i t="data types">
+   <i t="DB2 on OS/390">
+    <j l="datatype2.html#wp821349" />
+   </i>
+   <i t="DB2 UDB">
+    <j l="datatype2.html#wp835078" />
+   </i>
+   <i t="Informix 9">
+    <j l="datatype3.html#wp783736" />
+   </i>
+   <i t="Microsoft SQL Server">
+    <j l="datatype4.html#wp783999" />
+   </i>
+   <i t="Oracle8">
+    <j l="datatype5.html#wp784274" />
+   </i>
+   <i t="Oracle9i">
+    <j l="datatype5.html#wp784274" />
+   </i>
+   <i t="Sybase">
+    <j l="datatype6.html#wp784403" />
+   </i>
+  </i>
+  <i t="functions that improve performance">
+   <j l="devodbc13.html#wp13350" />
+  </i>
+  <i t="isolation levels">
+   <j l="datatype7.html#wp880640" />
+  </i>
+  <i t="overview">
+   <j l="useodbc2.html#wp533261" />
+  </i>
+ </i>
+ <i t="SequeLink Server for ODBC Socket">
+  <i t="support for scrollable cursors (ODBC)">
+   <j l="devodbc8.html#wp26623" />
+  </i>
+ </i>
+ <i t="setting">
+  <i t="ODBCINI environment variable (UNIX)">
+   <j l="useodbc5.html#wp527183" />
+  </i>
+ </i>
+ <i t="shell script, using to set environmental variables">
+  <j l="useodbc5.html#wp527183" />
+ </i>
+ <i t="SIGN function">
+  <j l="scalarfn3.html#wp17941" />
+ </i>
+ <i t="SIN function">
+  <j l="scalarfn3.html#wp17946" />
+ </i>
+ <i t="SLKStaticCursorLongColBuffLen">
+  <j l="useodbc7.html#wp532642" />
+ </i>
+ <i t="SOUNDEX function">
+  <j l="scalarfn3.html#wp17798" />
+ </i>
+ <i t="SPACE function">
+  <j l="scalarfn3.html#wp17806" />
+ </i>
+ <i t="specification supported">
+  <i t="ODBC driver">
+   <j l="useodbc2.html#wp533262" />
+  </i>
+ </i>
+ <i t="SQL Server, support for scrollable cursors (ODBC)">
+  <j l="devodbc8.html#wp18432" />
+ </i>
+ <i t="SQLCancel, effect of threading">
+  <j l="devodbc7.html#wp14173" />
+ </i>
+ <i t="SQLColumns, performance implications">
+  <j l="devodbc13.html#wp13267" />
+ </i>
+ <i t="SQLExecDirect">
+  <j l="devodbc13.html#wp13352" />
+ </i>
+ <i t="SQLExtendedFetch">
+  <j l="devodbc13.html#wp13334" />
+ </i>
+ <i t="SQLParamOptions">
+  <j l="devodbc4.html#wp12229" />
+  <j l="devodbc13.html#wp13357" />
+ </i>
+ <i t="SQLPrepare">
+  <j l="devodbc13.html#wp13352" />
+ </i>
+ <i t="SQLSetConnectAttr">
+  <j l="devodbc10.html#wp50108" />
+ </i>
+ <i t="SQLSpecialColumns">
+  <j l="devodbc13.html#wp13410" />
+ </i>
+ <i t="SQRT function">
+  <j l="scalarfn3.html#wp17952" />
+ </i>
+ <i t="starting">
+  <i t="ODBC Administrator">
+   <j l="useodbc3.html#wp1026432" />
+  </i>
+ </i>
+ <i t="statement handles">
+  <j l="devodbc13.html#wp13398" />
+ </i>
+ <i t="static scrollable cursors (ODBC)">
+  <j l="devodbc8.html#wp12870" />
+  <j l="devodbc8.html#wp12913" />
+ </i>
+ <i t="stored procedures">
+  <i t="using with ODBC driver">
+   <j l="devodbc13.html#wp13355" />
+  </i>
+  <i t="using with Oracle">
+   <j l="devodbc9.html#wp12923" />
+  </i>
+ </i>
+ <i t="string">
+  <i t="changing case of">
+   <j l="scalarfn3.html#wp17741" />
+  </i>
+  <i t="functions">
+   <j l="scalarfn3.html#wp25116" />
+  </i>
+  <i t="length of">
+   <j l="scalarfn3.html#wp17752" />
+  </i>
+  <i t="removing blanks from">
+   <j l="scalarfn3.html#wp17763" />
+   <j l="scalarfn3.html#wp17792" />
+  </i>
+  <i t="returning substring of">
+   <j l="scalarfn3.html#wp17810" />
+  </i>
+ </i>
+ <i t="SUBSTRING function">
+  <j l="scalarfn3.html#wp17810" />
+ </i>
+ <i t="SupportLink">
+  <j l="preface3.html#wp1028101" />
+ </i>
+ <i t="Sybase">
+  <i t="data types">
+   <j l="datatype6.html#wp784403" />
+  </i>
+  <i t="support for scrollable cursors (ODBC)">
+   <j l="devodbc8.html#wp18194" />
+  </i>
+ </i>
+ <i t="system information file">
+  <i t="centralized">
+   <j l="useodbc5.html#wp1025868" />
+  </i>
+  <i t="using to configure the ODBC driver">
+   <j l="useodbc5.html#wp531342" />
+  </i>
+ </i>
+ <i t="table characteristics, determining">
+  <j l="devodbc13.html#wp13267" />
+ </i>
+ <i t="TAN function">
+  <j l="scalarfn3.html#wp17956" />
+ </i>
+ <i t="TCP/IP port for SequeLink listener">
+  <j l="useodbc7.html#wp532627" />
+ </i>
+ <i t="Technical Support, contacting">
+  <j l="preface3.html#wp1028101" />
+ </i>
+ <i t="testing">
+  <i t="ODBC connections on Windows">
+   <j l="useodbc4.html#wp530582" />
+  </i>
+ </i>
+ <i t="threading">
+  <i t="ODBC driver use">
+   <j l="devodbc7.html#wp12401" />
+  </i>
+ </i>
+ <i t="time functions">
+  <j l="scalarfn3.html#wp17969" />
+ </i>
+ <i t="TIMESTAMPADD function">
+  <j l="scalarfn3.html#wp65712" />
+ </i>
+ <i t="TIMESTAMPDIFF function">
+  <j l="scalarfn3.html#wp65717" />
+ </i>
+ <i t="TRUNCATE function">
+  <j l="scalarfn3.html#wp17961" />
+ </i>
+ <i t="UCASE function">
+  <j l="scalarfn3.html#wp17816" />
+ </i>
+ <i t="Unicode">
+  <i t="DB2 UDB data types supported">
+   <j l="datatype2.html#wp890952" />
+  </i>
+ </i>
+ <i t="UNIX">
+  <i t="compiler requirements">
+   <j l="devodbc3.html#wp11597" />
+  </i>
+  <i t="configuring an ODBC data source">
+   <j l="useodbc5.html#wp531342" />
+  </i>
+  <i t="multithreading functionality of the ODBC driver">
+   <j l="devodbc7.html#wp15843" />
+  </i>
+  <i t="setting environmental variables">
+   <j l="useodbc5.html#wp527183" />
+  </i>
+  <i t="system information file">
+   <j l="useodbc5.html#wp1009705" />
+  </i>
+  <i t="using a centralized odbc.ini or odbc64.ini file">
+   <j l="useodbc5.html#wp1025868" />
+  </i>
+ </i>
+ <i t="updates, positional">
+  <j l="devodbc13.html#wp13407" />
+ </i>
+ <i t="UseLDAP attribute (ODBC)">
+  <j l="useodbc7.html#wp532655" />
+ </i>
+ <i t="USER function">
+  <j l="scalarfn3.html#wp18124" />
+ </i>
+ <i t="using">
+  <i t="centralized odbc.ini files (UNIX)">
+   <j l="useodbc5.html#wp1025868" />
+  </i>
+  <i t="keyset-driven cursors">
+   <j l="devodbc8.html#wp12895" />
+  </i>
+  <i t="scrollable cursors">
+   <i t="with the ODBC driver">
+    <j l="devodbc8.html#wp12866" />
+   </i>
+  </i>
+  <i t="static cursors">
+   <j l="devodbc8.html#wp12895" />
+  </i>
+  <i t="stored procedures with Oracle">
+   <j l="devodbc9.html#wp12923" />
+  </i>
+ </i>
+ <i t="WEEK function">
+  <j l="scalarfn3.html#wp65722" />
+ </i>
+ <i t="Windows">
+  <i t="multithreading functional of the ODBC driver">
+   <j l="devodbc7.html#wp15843" />
+  </i>
+  <i t="required ODBC libraries and header files">
+   <j l="devodbc2.html#wp17281" />
+  </i>
+  <i t="testing ODBC connections">
+   <j l="useodbc4.html#wp530582" />
+  </i>
+ </i>
+ <i t="WorkArounds attribute">
+  <j l="useodbc7.html#wp534735" />
+ </i>
+ <i t="XML, persistence, implementing (ODBC driver)">
+  <j l="devodbc11.html#wp24757" />
+ </i>
+ <i t="YEAR function">
+  <j l="scalarfn3.html#wp65727" />
+ </i>
+</WebWorksHelpIX>

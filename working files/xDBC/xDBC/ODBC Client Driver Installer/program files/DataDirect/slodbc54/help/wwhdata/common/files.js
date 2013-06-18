@@ -1,0 +1,41 @@
+function  WWHBookData_Files(P)
+{
+P.fA("Using This Help File","preface.html");
+P.fA("Conventions Used in This Help File  ","preface2.html");
+P.fA("Contacting Technical Support","preface3.html");
+P.fA("Using the ODBC Client","useodbc.html");
+P.fA("About the ODBC Client","useodbc2.html");
+P.fA("Using the ODBC Administrator","useodbc3.html");
+P.fA("Configuring ODBC Client Data Sources on\u00a0Windows","useodbc4.html");
+P.fA("Configuring ODBC Client Data Sources on\u00a0UNIX","useodbc5.html");
+P.fA("Connecting Using a Connection String","useodbc6.html");
+P.fA("ODBC Connection Attributes","useodbc7.html");
+P.fA("ODBC SequeLink Driver Setup Dialog Box","useodbc8.html");
+P.fA("Developing ODBC Applications","devodbc.html");
+P.fA("Required ODBC Libraries and Header Files","devodbc2.html");
+P.fA("UNIX Compiler Requirements","devodbc3.html");
+P.fA("ODBC API Functions","devodbc4.html");
+P.fA("SQL Escape Sequences","devodbc5.html");
+P.fA("Data Types and Isolation Levels","devodbc6.html");
+P.fA("Threading","devodbc7.html");
+P.fA("Using Scrollable Cursors","devodbc8.html");
+P.fA("Using Stored Procedures with Oracle","devodbc9.html");
+P.fA("Specifying Application IDs","devodbc10.html");
+P.fA("Persisting a Result Set as an XML Data File","devodbc11.html");
+P.fA("Error Handling","devodbc12.html");
+P.fA("Developing Performance-Optimized ODBC Applications","devodbc13.html");
+P.fA("SQL Escape Sequences","scalarfn.html");
+P.fA("Date, Time, and Timestamp Escape Sequences","scalarfn2.html");
+P.fA("Scalar Functions","scalarfn3.html");
+P.fA("Like Predicate Escape Characters","scalarfn4.html");
+P.fA("Outer Join Escape Sequences","scalarfn5.html");
+P.fA("Procedure Call Escape Sequences","scalarfn6.html");
+P.fA("Data Types and Isolation Levels","datatype.html");
+P.fA("Supported Data Types","datatype2.html");
+P.fA("Informix 9","datatype3.html");
+P.fA("Microsoft SQL Server 7, 2000","datatype4.html");
+P.fA("Oracle8, Oracle9i","datatype5.html");
+P.fA("Sybase","datatype6.html");
+P.fA("Isolation Levels","datatype7.html");
+P.fA("datatype8.html","datatype8.html");
+}

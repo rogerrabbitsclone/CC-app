@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:49:55" />
+  <title>Configuring ODBC Client Data Sources on&#160;Windows</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp526977"> </a><h1 class="pNewHTMLPageNoNum">
+Configuring ODBC Client Data Sources on&#160;Windows
+</h1>
+<hr /><a name="wp526982"> </a><p class="pBody">
+To configure client data sources for the ODBC Client on Windows platforms, you use the ODBC Administrator.
+</p>
+<a name="wp997337"> </a><h3 class="pHeading2">
+Configuring ODBC User and System Client Data Sources
+</h3>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp1026113"> </a><div class="pSmartList1"><li>Start the ODBC Administrator. To start the ODBC Administrator, select <b class="cBold">Start</b> / <b class="cBold">Programs</b>. From the Programs menu, select <b class="cBold">DataDirect SequeLink for ODBC 5.4</b>, and then select the <b class="cBold">ODBC Administrator</b> application. </li></div><a name="wp1026114"> </a><p class="pBodyIndent12pxBeforeAfter">
+Click the <b class="cBold">User DSN</b> tab or the <b class="cBold">System DSN</b> tab to list user or system data sources, respectively.
+</p>
+<a name="wp1026123"> </a><div class="pSmartList1"><li>To configure a new data source, click the <b class="cBold">Add</b> button. A list of installed drivers appears. Select <b class="cBold">DataDirect 32-BIT SequeLink&#160;5.4</b>; then, click <b class="cBold">Finish</b>.</li></div><a name="wp1026127"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE: To change an existing data source, select the data source you want to configure and click the <b class="cBold">Configure</b> button.
+</p>
+<a name="wp1026128"> </a><p class="pBodyIndent12pxBeforeAfter">
+The DataDirect SequeLink for ODBC Setup window appears.
+</p>
+<a name="wp1026137"> </a><div class="pSmartList1"><li>Provide the following information; then, click <b class="cBold">OK</b>.</li></div><a name="wp1026138"> </a><p class="pBodyIndent12pxBeforeAfter">
+Data Source Name: Type a unique name that identifies this ODBC data source configuration. Examples are &#8220;Accounting&#8221; or &#8220;SequeLink to Oracle Data&#8221;. 
+</p>
+<a name="wp1026139"> </a><p class="pBodyIndent12pxBeforeAfter">
+Description: Optionally, type a description of the data source, for example, &#8220;My Accounting Database&#8221; or &#8220;Accounting Data in Oracle&#8221;.
+</p>
+<a name="wp1026140"> </a><p class="pBodyIndent12pxBeforeAfter">
+SequeLink Server Host: Type the TCP/IP host name of the SequeLink service to which the ODBC Client will connect.
+</p>
+<a name="wp1026141"> </a><p class="pBodyIndent12pxBeforeAfter">
+SequeLink Server Port: Type the TCP/IP port the SequeLink service is listening on for connection requests. The port you specify must be the same port that was specified for the SequeLink service when the SequeLink Server was installed; the default is 19996.
+</p>
+<a name="wp1026142"> </a><p class="pBodyIndent12pxBeforeAfter">
+Server Data Source: Type the name of a server data source configured for the SequeLink service to use for the connection, or click the <b class="cBold">...</b> button to select an existing server data source. This field is optional. If a server data source is not specified, the default server data source for that SequeLink service is used.
+</p>
+<a name="wp1026147"> </a><p class="pBodyIndent12pxBeforeAfter">
+Translate: Click <span style="font-weight: bold">Translate</span> only if you want to configure an ODBC translator. 
+</p>
+<a name="wp1026148"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE: We strongly recommend that you do not configure an ODBC translator and rely on the native SequeLink transliteration between server and client code pages.
+</p>
+<a name="wp1026149"> </a><p class="pBodyIndent12pxBeforeAfter">
+The Select Translator dialog box appears, listing translators specified in the ODBC Translators section of the system information. Select a translator. When satisfied with your choice, click <span style="font-weight: bold">OK</span> to close this dialog box and perform the translation.
+</p>
+<a name="wp1026151"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE FOR LDAP USERS: To configure the ODBC Client to retrieve connection information from an LDAP directory, select the <b class="cBold">Use LDAP</b> check box. The fields change on the lower half of the screen to accommodate the information required to query an LDAP server for connection information. Provide the following information:
+</p>
+<a name="wp1026152"> </a><p class="pBodyIndent12pxBeforeAfter">
+LDAP Server Host: Type the TCP/IP host name of the LDAP server.
+</p>
+<a name="wp1026153"> </a><p class="pBodyIndent12pxBeforeAfter">
+LDAP Server Port: Type the TCP/IP port the LDAP server is listening on for connection requests. If unspecified, the ODBC Client will use the default LDAP port&#160;389.
+</p>
+<a name="wp1026154"> </a><p class="pBodyIndent12pxBeforeAfter">
+Distinguished Name (DN): Type an identifier that uniquely identifies the LDAP entry where the connection information is stored.
+</p>
+</ol></div>
+<a name="wp1026155"> </a><p class="pBody">
+ 
+</p>
+<a name="wp1026162"> </a><p class="pBody">
+For more information about retrieving connection information from LDAP directories, refer to the <em class="cEmphasis">SequeLink Administrator&#8217;s Guide</em>.
+</p>
+<a name="wp998560"> </a><p class="pBody">
+ 
+</p>
+<a name="wp1011551"> </a><h3 class="pHeading2">
+Configuring ODBC File Client Data Sources
+</h3>
+<a name="wp1027412"> </a><p class="pBody">
+File data sources are data source files that can be stored on a file server, making the files available to any user who can access them. 
+</p>
+<a name="wp1027413"> </a><p class="pBodyBold">
+To configure ODBC file client data sources:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp1027414"> </a><div class="pSmartList1"><li>Start the ODBC Administrator by clicking <b class="cBold">Start</b>, then <b class="cBold">Programs</b>. From the Programs menu, select <b class="cBold">DataDirect SequeLink for ODBC 5.4</b>, and then select the <b class="cBold">ODBC Administrator</b> application.</li></div><a name="wp1027415"> </a><div class="pSmartList1"><li>Click the <b class="cBold">File DSN</b> tab. The File DSN tab lists any file data sources in the specified directory.</li></div><a name="wp1027424"> </a><div class="pSmartList1"><li>To configure a new data source, click the <b class="cBold">Add</b> button. A list of installed drivers appears. Select <b class="cBold">DataDirect 32-BIT SequeLink&#160;5.4</b>; then, perform one of the following actions:</li></div><div class="pSmartList2Rel"><ul class="pSmartList2Rel">
+<a name="wp1027428"> </a><div class="pSmartList2Rel"><li>To configure the file data source to connect directly to a SequeLink Server without retrieving connection information from an LDAP directory, click <b class="cBold">OK</b>. Then, skip to <a  href="useodbc4.html#wp1027450"><a  href="useodbc4.html#wp1027450">Step 5</a></a>. </li></div>
+<a name="wp1027433"> </a><div class="pSmartList2Rel"><li>To configure the file data source to retrieve connection information from an LDAP directory, continue with the next step.</li></div>
+</ul></div>
+<a name="wp1027434"> </a><div class="pSmartList1"><li>Click <b class="cBold">Advanced</b>. The Advanced File DSN Creation Settings window appears.</li></div><a name="wp1027443"> </a><p class="pBodyIndent12pxBeforeAfter">
+Type <code class="cCode">UserLDAP=1</code> in the Type driver-specific keywords and values scrollable box; then, click <b class="cBold">OK</b>. You are returned to the list of drivers. Click <b class="cBold">Next</b> and continue with <a  href="useodbc4.html#wp1027450"><a  href="useodbc4.html#wp1027450">Step 5</a></a>.
+</p>
+<a name="wp1027450"> </a><div class="pSmartList1"><li>The Create New Data Source window appears.</li></div><a name="wp1027459"> </a><p class="pBodyIndent12pxBeforeAfter">
+Type the name of the file data source you want to create or click <b class="cBold">Browse</b> to select an existing file data source; then, click <b class="cBold">Next</b>. 
+</p>
+<a name="wp1027460"> </a><div class="pSmartList1"><li>The Create New Data Source displays the settings you&#8217;ve configured for this data source.</li></div><a name="wp1027469"> </a><div class="pSmartList1"><li>Click <b class="cBold">Finish</b> to create the file data source. A series of connection dialogs appear as described in <a  href="useodbc4.html#wp527051"><a  href="useodbc4.html#wp527051">&quot;ODBC Connection Dialogs&quot;</a></a>. The file data source will be saved after you enter the correct information in the connection dialog boxes.</li></div></ol></div>
+<a name="wp547564"> </a><p class="pBody">
+ 
+</p>
+<a name="wp527051"> </a><h3 class="pHeading2">
+ODBC Connection Dialogs
+</h3>
+<a name="wp1027555"> </a><p class="pBody">
+A SequeLink data access connection involves the following stages:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp1027591"> </a><div class="pSmartList1"><li>A network connection is established.</li></div><a name="wp1027592"> </a><div class="pSmartList1"><li>An authentication mechanism is used to establish the identity of the SequeLink Client to the SequeLink Server.</li></div><a name="wp1027593"> </a><div class="pSmartList1"><li>Based on information provided by the SequeLink Client application (for example, a database user name and password), a database connection is established.</li></div></ol></div>
+<a name="wp1027594"> </a><h4 class="pHeading3">
+Stage 1: Establishing a Network Connection
+</h4>
+<a name="wp1027595"> </a><p class="pBody">
+The first stage of the connection process involves establishing a network connection. The dialog box that appears depends on whether the connection has been configured to connect directly to a SequeLink service or to retrieve connection information for the SequeLink service from a centralized LDAP directory.
+</p>
+<a name="wp1027596"> </a><h5 class="pHeading4">
+Connecting Directly to a SequeLink Service
+</h5>
+<a name="wp1027597"> </a><p class="pBody">
+If the connection has been configured to connect directly to a SequeLink service, the Connect to the SequeLink Server dialog box appears.
+</p>
+<a name="wp1027606"> </a><p class="pBody">
+Provide the following information; then, click <b class="cBold">OK</b>.
+</p>
+<a name="wp1027607"> </a><p class="pBody">
+SequeLink Server Host: Type the TCP/IP host name of the SequeLink service.
+</p>
+<a name="wp1027608"> </a><p class="pBody">
+SequeLink Server Port: Type the TCP/IP port on which the SequeLink service is listening. A default installation of SequeLink Server uses the port 19996.
+</p>
+<a name="wp1027609"> </a><p class="pBody">
+Server Data Source: Type the name of a server data source to use for the connection, or select one from the drop-down list. This step is optional. If a server data source is not specified, the default server data source for that service will be used for the connection.
+</p>
+<a name="wp1027610"> </a><h5 class="pHeading4">
+Retrieving Connection Information from an LDAP Directory
+</h5>
+<a name="wp1027611"> </a><p class="pBody">
+If the connection has been configured to connect to an LDAP server to retrieve connection information from an LDAP directory, the Connect to the SequeLink Server dialog box appears.
+</p>
+<a name="wp1027620"> </a><p class="pBody">
+Provide the following information; then, click <b class="cBold">OK</b>.
+</p>
+<a name="wp1027621"> </a><p class="pBody">
+LDAP Server Host: Type the TCP/IP host name of the LDAP server.
+</p>
+<a name="wp1027622"> </a><p class="pBody">
+LDAP Server Port: Type the TCP/IP port on which the LDAP server is listening.
+</p>
+<a name="wp1027623"> </a><p class="pBody">
+Distinguished Name: Type the Distinguished Name (DN) of the LDAP entry.
+</p>
+<a name="wp1027625"> </a><h4 class="pHeading3">
+Stage 2: SequeLink Server Authentication
+</h4>
+<a name="wp1027626"> </a><p class="pBody">
+The second stage of the connection process involves authentication of the SequeLink Client to the SequeLink Server. The dialog boxes that appear depend on how authentication is configured for the SequeLink service.
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp1027627"> </a><div class="pSmartList1"><li>When ServiceAuthMethods=anonymous or ServiceAuthMethods=integrated_nt, no dialog boxes appear.</li></div><a name="wp1027628"> </a><div class="pSmartList1"><li>When ServiceAuthMethods=OSLogon(HUID,HPWD) or ServiceAuthMethods=OSLogon(UID,PWD), the Logon to SequeLink Service dialog box appears.</li></div><a name="wp1027637"> </a><p class="pBodyIndent12pxBeforeAfter">
+Provide the following information; then, click <b class="cBold">OK</b>.
+</p>
+<a name="wp1027638"> </a><p class="pBodyIndent12pxBeforeAfter">
+Host User Name:<b class="cBold"> </b>Type the host user name. 
+</p>
+<a name="wp1027639"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE: When connecting to a Windows server, you must prefix the host user name with a server name, if authenticating to a local server, or a domain name (for example, SALES\DJONES). If the server name or domain name is omitted, the SequeLink Server will attempt to authenticate the user ID and password with the database account defined for the machine on which the SequeLink Server is running. If this validation fails, the SequeLink Server will attempt to authenticate the user ID and password with the database account defined for the domain of the machine on which the SequeLink Server is running.
+</p>
+<a name="wp1027640"> </a><p class="pBodyIndent12pxBeforeAfter">
+Host Password: Type the host password.
+</p>
+<a name="wp1027641"> </a><div class="pSmartList1"><li>When ServiceAuthMethods=OSLogon(HUID,HPWD,NPWD) or ServiceAuthMethods=OSLogon(UID,PWD,NPWD) and the password is expired, the Logon to SequeLink service dialog box appears.</li></div><a name="wp1027650"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE: If the password is not expired, the previously described dialog box appears, prompting only for the host user name and host password.
+</p>
+<a name="wp1027651"> </a><p class="pBodyIndent12pxBeforeAfter">
+Provide the following information; then, click <b class="cBold">OK</b>.
+</p>
+<a name="wp1027652"> </a><p class="pBodyIndent12pxBeforeAfter">
+Host User Name: Type the host user name. 
+</p>
+<a name="wp1027653"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE: When connecting to a Windows server, you must prefix the host user name with a server name, if authenticating to a local server, or a domain name (for example, SALES\DJONES). If the server name or domain name is omitted, the SequeLink Server will attempt to authenticate the user ID and password with the database account defined for the machine on which the SequeLink Server is running. If this validation fails, the SequeLink Server will attempt to authenticate the user ID and password with the database account defined for the domain of the machine on which the SequeLink Server is running.
+</p>
+<a name="wp1027654"> </a><p class="pBodyIndent12pxBeforeAfter">
+Host Password: Type the host password.
+</p>
+<a name="wp1027655"> </a><p class="pBodyIndent12pxBeforeAfter">
+New Password: Type the new password to be used by the SequeLink password change mechanism.
+</p>
+<a name="wp1027656"> </a><p class="pBodyIndent12pxBeforeAfter">
+Confirm Password: Type again the new password to confirm&#160;it.
+</p>
+</ul></div>
+<a name="wp1027662"> </a><p class="pBody">
+For more information about configuring authentication, refer to the <em class="cEmphasis">SequeLink Administrator&#8217;s Guide</em>.
+</p>
+<a name="wp1027663"> </a><h4 class="pHeading3">
+Stage 3: Data Store Logon
+</h4>
+<a name="wp1027664"> </a><p class="pBody">
+The last stage of the connection process involves logging on the data store. The dialog boxes that appear depend on the data store logon method configured for the SequeLink service:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp1027665"> </a><div class="pSmartList1"><li>When DataSourceLogonMethod=OSIntegrated, no dialog boxes appear.</li></div><a name="wp1027666"> </a><div class="pSmartList1"><li>When DataSourceLogonMethod=DBMSLogon(UID,PWD) or DataSourceLogonMethod=DBMSLogon(DBUID,DBPWD), a data store-specific user name and password are required and the Logon to SequeLink Service dialog box appears.</li></div><a name="wp1027675"> </a><p class="pBodyIndent12pxBeforeAfter">
+Provide the following information; then, click <b class="cBold">OK</b>.
+</p>
+<a name="wp1027676"> </a><p class="pBodyIndent12pxBeforeAfter">
+Database User Name: Type the database logon&#160;ID.
+</p>
+<a name="wp1027677"> </a><p class="pBodyIndent12pxBeforeAfter">
+Database Password: Type the database password.
+</p>
+<a name="wp1027678"> </a><p class="pBodyIndent12pxBeforeAfter">
+Database: Type the name of the database to which you want to connect. This field is disabled when the data store does not recognize the concept of databases.
+</p>
+</ul></div>
+<a name="wp1027684"> </a><p class="pBody">
+For more information about configuring data store logon methods, refer to the <em class="cEmphasis">SequeLink Administrator&#8217;s Guide</em>.
+</p>
+<a name="wp548766"> </a><p class="pBody">
+ 
+</p>
+<a name="wp530582"> </a><h3 class="pHeading2">
+Testing ODBC Connections on Windows
+</h3>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp1027779"> </a><div class="pSmartList1"><li>On the SequeLink Client, start the ODBC Administrator. To start the ODBC Administrator, select <b class="cBold">Start</b> / <b class="cBold">Programs</b>. From the Programs menu, select <b class="cBold">DataDirect SequeLink for ODBC&#160;5.4</b>, and then select the <b class="cBold">ODBC Administrator</b> application. The ODBC Data Source Administrator window appears listing resident data sources.</li></div><a name="wp1027796"> </a><div class="pSmartList1"><li>Create an ODBC data source as described in <a  href="useodbc4.html#wp526977"><a  href="useodbc4.html#wp526977">&quot;Configuring ODBC Client Data Sources on&#160;Windows&quot;</a></a>, specifying the TCP/IP&#160;address and TCP/IP port of the SequeLink service.</li></div><a name="wp1027798"> </a><div class="pSmartList1"><li>Click the <b class="cBold">Test Connect</b> button to test the connection. If successful, a dialog appears telling you the connection was successful. You are now ready to start using your ODBC applications with SequeLink.</li></div></ol></div>
+<a name="wp548004"> </a><p class="pBody">
+ 
+</p>
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.writeln(WWHRelatedTopicsInlineHTML());
+   // -->
+  </script>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function  WWHDefineRelatedTopics(ParamRelatedTopics)
+    {
+      ParamRelatedTopics.fAdd("Using the ODBC Administrator", "devref", "useodbc3.html#wp533267");
+      ParamRelatedTopics.fAdd("Configuring ODBC Client Data Sources on&#160;UNIX", "devref", "useodbc5.html#wp1009705");
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

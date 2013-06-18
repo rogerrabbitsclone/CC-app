@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:50:04" />
+  <title>Threading</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp12401"> </a><h1 class="pNewHTMLPageNoNum">
+Threading
+</h1>
+<hr /><a name="wp12402"> </a><p class="pBody">
+The ODBC specification requires that all ODBC drivers must be thread-safe; that is, they must not fail when database requests are made on separate threads.
+</p>
+<a name="wp14658"> </a><h3 class="pHeading2">
+Threading Architecture
+</h3>
+<a name="wp12403"> </a><p class="pBody">
+An ODBC driver can be based on one of the following architectures:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp12404"> </a><div class="pSmartList1"><li><em class="cEmphasis">Not thread-safe. </em>The ODBC driver should not be used in a multi-threaded environment.</li></div><a name="wp12405"> </a><div class="pSmartList1"><li><em class="cEmphasis">Thread-impaired</em>. The ODBC driver serializes all ODBC calls. All requests are handled one by one, without concurrent processing.</li></div><a name="wp12406"> </a><div class="pSmartList1"><li><em class="cEmphasis">Thread per connection.</em> The ODBC driver processes requests concurrently with statement handles that do not share the same connection handle; however requests on the same connection are serialized.</li></div><a name="wp12407"> </a><div class="pSmartList1"><li><em class="cEmphasis">Fully threaded.</em> All requests fully use the threaded model. The ODBC driver processes all requests on multiple statements concurrently.</li></div></ul></div>
+<a name="wp15843"> </a><p class="pBody">
+The multithreading ability of the ODBC driver is platform dependent as shown in <a  href="devodbc7.html#wp15850">Table&#160;2-6</a>.</p><div align="left">
+<table border="1">
+  <caption><a name="wp15850"> </a><div class="pTableTitleBold">
+Table 2-6.  Multithreading Functionality of the ODBC Driver&#160;
+</div>
+</caption>
+  <tr align="center">    <th><a name="wp15857"> </a><div class="pCellHeading">
+Platform
+</div>
+</th>
+    <th><a name="wp15859"> </a><div class="pCellHeading">
+Capability
+</div>
+</th>
+</tr>
+  <tr align="left">    <td><a name="wp15861"> </a><div class="pCellBody">
+Windows 
+</div>
+</td>
+    <td><a name="wp15863"> </a><div class="pCellBody">
+Thread for each connection
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp15865"> </a><div class="pCellBody">
+Solaris
+</div>
+</td>
+    <td><a name="wp15867"> </a><div class="pCellBody">
+Thread for each connection
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp15869"> </a><div class="pCellBody">
+AIX reentrant
+</div>
+</td>
+    <td><a name="wp15871"> </a><div class="pCellBody">
+Thread for each connection
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp22884"> </a><div class="pCellBody">
+Linux
+</div>
+</td>
+    <td><a name="wp22886"> </a><div class="pCellBody">
+Thread for each connection 
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp15881"> </a><div class="pCellBody">
+HP-UX 11 aCC
+</div>
+</td>
+    <td><a name="wp15883"> </a><div class="pCellBody">
+Thread for each connection using the HP-UX native threading model (p-threads)
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp14173"> </a><h3 class="pHeading2">
+Cancelling Functions in Multithreaded Applications
+</h3>
+<a name="wp14185"> </a><p class="pBody">
+In a multithreaded application, the application can cancel a function that is running synchronously on a statement. To cancel the function, the application calls SQLCancel with the same statement handle as that used by the target function, but on a different thread. Whether SQLCancel actually cancels the running function depends on the data store being accessed as shown in <a  href="devodbc7.html#wp14300">Table&#160;2-7</a>. 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp14606"> </a><div class="pSmartList1"><li><em class="cEmphasis">OK</em> means that SQLCancel can interrupt the running function.</li></div><a name="wp14607"> </a><div class="pSmartList1"><li><em class="cEmphasis">Ignored</em> means that SQLCancel will have no affect on the running function. </li></div></ul></div>
+<a name="wp14612"> </a><p class="pBody">
+In both cases, SQLCancel will return <code class="cCode">SQL_SUCCESS</code>. If SQLCancel has been called from a different thread while there is a pending request, the original statement will return SQL_ERROR with the error message <code class="cCode">Operation cancelled</code>.
+</p>
+<a name="wp15897"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption><a name="wp14300"> </a><div class="pTableTitleBold">
+Table 2-7.  Using SQLCancel in Multithreaded Applications
+</div>
+</caption>
+  <tr align="center">    <th><a name="wp14304"> </a><div class="pCellHeading">
+Data Store
+</div>
+</th>
+    <th><a name="wp14306"> </a><div class="pCellHeading">
+SQLCancel
+</div>
+</th>
+</tr>
+  <tr align="left">    <td><a name="wp14434"> </a><div class="pCellBody">
+DB2 V5, V6, V7R1 on OS/390
+</div>
+</td>
+    <td><a name="wp14436"> </a><div class="pCellBody">
+Ignored
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp18108"> </a><div class="pCellBody">
+DB2 V7.2 and V8.1 on Windows
+</div>
+</td>
+    <td><a name="wp18110"> </a><div class="pCellBody">
+OK
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp30054"> </a><div class="pCellBody">
+DB2 V7.2 and V8.1 on UNIX
+</div>
+</td>
+    <td><a name="wp30056"> </a><div class="pCellBody">
+Ignored
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp18167"> </a><div class="pCellBody">
+Informix 9.<em class="cEmphasis">x</em>, Informix 2000
+</div>
+</td>
+    <td><a name="wp18169"> </a><div class="pCellBody">
+OK
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp14548"> </a><div class="pCellBody">
+Microsoft SQL Server 7.0, 2000
+</div>
+</td>
+    <td><a name="wp14550"> </a><div class="pCellBody">
+OK
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp14521"> </a><div class="pCellBody">
+Oracle8, Oracle9i on Windows NT, Windows 2000, Windows XP
+</div>
+</td>
+    <td><a name="wp14523"> </a><div class="pCellBody">
+Ignored
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp14312"> </a><div class="pCellBody">
+Oracle8, Oracle9i on UNIX
+</div>
+</td>
+    <td><a name="wp14314"> </a><div class="pCellBody">
+OK
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp18119"> </a><div class="pCellBody">
+Sybase 11, 12
+</div>
+</td>
+    <td><a name="wp18121"> </a><div class="pCellBody">
+OK
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

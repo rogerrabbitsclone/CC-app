@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:50:04" />
+  <title>ODBC API Functions</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp12063"> </a><h1 class="pNewHTMLPageNoNum">
+ODBC API Functions
+</h1>
+<hr /><a name="wp12064"> </a><p class="pBody">
+The ODBC driver is ODBC Level 1&#8211;compliant, supporting all ODBC Core and Level 1 functions. Most Level 2 functions are also supported. <a  href="devodbc4.html#wp12077">Table&#160;2-3</a> and <a  href="devodbc4.html#wp12229">Table&#160;2-4</a> list supported functions for ODBC 2.<em class="cEmphasis">x</em> and ODBC 3.<em class="cEmphasis">x</em> applications, respectively.
+</p>
+<a name="wp12155"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption><a name="wp12077"> </a><div class="pTableTitleBold">
+Table 2-3.  ODBC Function Conformance for 2.x ODBC Applications &#160;
+</div>
+</caption>
+  <tr align="left">    <td colspan="2" rowspan="1"><a name="wp12081"> </a><div class="pCellHeading">
+Core Functions
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp12085"> </a><div class="pCellBody">
+SQLAllocConnect
+</div>
+<a name="wp12086"> </a><div class="pCellBody">
+SQLAllocEnv
+</div>
+<a name="wp12087"> </a><div class="pCellBody">
+SQLAllocStmt
+</div>
+<a name="wp12088"> </a><div class="pCellBody">
+SQLBindCol
+</div>
+<a name="wp19662"> </a><div class="pCellBody">
+SQLBindParameter
+</div>
+<a name="wp12089"> </a><div class="pCellBody">
+SQLCancel
+</div>
+<a name="wp26583"> </a><div class="pCellBody">
+SQLColAttributes
+</div>
+<a name="wp26584"> </a><div class="pCellBody">
+SQLConnect
+</div>
+<a name="wp26585"> </a><div class="pCellBody">
+SQLDescribeCol
+</div>
+<a name="wp12093"> </a><div class="pCellBody">
+SQLDisconnect
+</div>
+<a name="wp26532"> </a><div class="pCellBody">
+SQLDrivers
+</div>
+<a name="wp12094"> </a><div class="pCellBody">
+SQLError
+</div>
+</td>
+    <td><a name="wp19737"> </a><div class="pCellBody">
+SQLExecDirect
+</div>
+<a name="wp26535"> </a><div class="pCellBody">
+SQLExecute
+</div>
+<a name="wp19738"> </a><div class="pCellBody">
+SQLFetch
+</div>
+<a name="wp19739"> </a><div class="pCellBody">
+SQLFreeConnect
+</div>
+<a name="wp19740"> </a><div class="pCellBody">
+SQLFreeEnv
+</div>
+<a name="wp19741"> </a><div class="pCellBody">
+SQLFreeStmt
+</div>
+<a name="wp19742"> </a><div class="pCellBody">
+SQLGetCursorName
+</div>
+<a name="wp19743"> </a><div class="pCellBody">
+SQLNumResultCols
+</div>
+<a name="wp19744"> </a><div class="pCellBody">
+SQLPrepare
+</div>
+<a name="wp19745"> </a><div class="pCellBody">
+SQLRowCount
+</div>
+<a name="wp19746"> </a><div class="pCellBody">
+SQLSetCursorName
+</div>
+<a name="wp19747"> </a><div class="pCellBody">
+SQLTransact
+</div>
+</td>
+</tr>
+  <tr align="left">    <td colspan="2" rowspan="1"><a name="wp19670"> </a><div class="pCellHeading">
+Level 1 Functions
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp19690"> </a><div class="pCellBody">
+SQLColumns
+</div>
+<a name="wp19692"> </a><div class="pCellBody">
+SQLGetConnectOption
+</div>
+<a name="wp26592"> </a><div class="pCellBody">
+SQLGetData
+</div>
+<a name="wp28886"> </a><div class="pCellBody">
+SQLDriverConnect
+</div>
+<a name="wp26593"> </a><div class="pCellBody">
+SQLGetFunctions
+</div>
+<a name="wp26594"> </a><div class="pCellBody">
+SQLGetInfo
+</div>
+<a name="wp19696"> </a><div class="pCellBody">
+SQLGetStmtOption
+</div>
+<a name="wp19697"> </a><div class="pCellBody">
+SQLGetTypeInfo
+</div>
+</td>
+    <td><a name="wp19717"> </a><div class="pCellBody">
+SQLParamData
+</div>
+<a name="wp19718"> </a><div class="pCellBody">
+SQLPutData
+</div>
+<a name="wp19719"> </a><div class="pCellBody">
+SQLSetConnectOption
+</div>
+<a name="wp19720"> </a><div class="pCellBody">
+SQLSetStmtOption
+</div>
+<a name="wp19721"> </a><div class="pCellBody">
+SQLSpecialColumns 
+</div>
+<a name="wp19722"> </a><div class="pCellBody">
+SQLStatistics 
+</div>
+<a name="wp19723"> </a><div class="pCellBody">
+SQLTables
+</div>
+</td>
+</tr>
+  <tr align="left">    <td colspan="2" rowspan="1"><a name="wp12131"> </a><div class="pCellHeading">
+Level 2 Functions
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp12136"> </a><div class="pCellBody">
+SQLDataSources
+</div>
+<a name="wp12138"> </a><div class="pCellBody">
+SQLExtendedFetch
+</div>
+<a name="wp12140"> </a><div class="pCellBody">
+SQLMoreResults
+</div>
+<a name="wp12141"> </a><div class="pCellBody">
+SQLNativeSql
+</div>
+</td>
+    <td><a name="wp12144"> </a><div class="pCellBody">
+SQLNumParams
+</div>
+<a name="wp26562"> </a><div class="pCellBody">
+SQLParamOptions
+</div>
+<a name="wp12149"> </a><div class="pCellBody">
+SQLSetScrollOptions
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp12229"> </a><div class="pTableTitleBold">
+Table 2-4.  Function Conformance for 3.x ODBC Applications</div><div align="left">
+<table border="1">
+  <caption></caption>
+  <tr align="left">    <td><a name="wp30784"> </a><div class="pCellBody">
+SQLAllocHandle
+</div>
+<a name="wp30785"> </a><div class="pCellBody">
+SQLBindCol
+</div>
+<a name="wp44248"> </a><div class="pCellBody">
+SQLBindParam
+</div>
+<a name="wp30786"> </a><div class="pCellBody">
+SQLBindParameter
+</div>
+<a name="wp30787"> </a><div class="pCellBody">
+SQLBulkOperations
+</div>
+<a name="wp30788"> </a><div class="pCellBody">
+SQLCancel
+</div>
+<a name="wp30789"> </a><div class="pCellBody">
+SQLCloseCursor
+</div>
+<a name="wp30790"> </a><div class="pCellBody">
+SQLColAttribute
+</div>
+<a name="wp44260"> </a><div class="pCellBody">
+SQLColAttributes
+</div>
+<a name="wp30791"> </a><div class="pCellBody">
+SQLColumnPrivileges
+</div>
+<a name="wp30792"> </a><div class="pCellBody">
+SQLColumns
+</div>
+<a name="wp30793"> </a><div class="pCellBody">
+SQLConnect
+</div>
+<a name="wp30794"> </a><div class="pCellBody">
+SQLCopyDesc
+</div>
+<a name="wp30795"> </a><div class="pCellBody">
+SQLDataSources
+</div>
+<a name="wp30796"> </a><div class="pCellBody">
+SQLDescribeCol
+</div>
+<a name="wp30797"> </a><div class="pCellBody">
+SQLDescribeParam<font size="1"><sup>Note</sup></font>
+</div>
+<a name="wp30798"> </a><div class="pCellBody">
+SQLDisconnect
+</div>
+<a name="wp30799"> </a><div class="pCellBody">
+SQLDriverConnect
+</div>
+<a name="wp30800"> </a><div class="pCellBody">
+SQLDrivers
+</div>
+<a name="wp30801"> </a><div class="pCellBody">
+SQLEndTran
+</div>
+<a name="wp30802"> </a><div class="pCellBody">
+SQLExecDirect
+</div>
+</td>
+    <td><a name="wp44421"> </a><div class="pCellBody">
+SQLExecute
+</div>
+<a name="wp44373"> </a><div class="pCellBody">
+SQLExtendedFetch
+</div>
+<a name="wp44374"> </a><div class="pCellBody">
+SQLFetch
+</div>
+<a name="wp30807"> </a><div class="pCellBody">
+SQLFetchScroll
+</div>
+<a name="wp30808"> </a><div class="pCellBody">
+SQLForeignKeys
+</div>
+<a name="wp30809"> </a><div class="pCellBody">
+SQLFreeHandle
+</div>
+<a name="wp30810"> </a><div class="pCellBody">
+SQLFreeStmt
+</div>
+<a name="wp30811"> </a><div class="pCellBody">
+SQLGetConnectAttr
+</div>
+<a name="wp30812"> </a><div class="pCellBody">
+SQLGetCursorName
+</div>
+<a name="wp30813"> </a><div class="pCellBody">
+SQLGetData
+</div>
+<a name="wp30814"> </a><div class="pCellBody">
+SQLGetDescField
+</div>
+<a name="wp30815"> </a><div class="pCellBody">
+SQLGetDescRec
+</div>
+<a name="wp30816"> </a><div class="pCellBody">
+SQLGetDiagField
+</div>
+<a name="wp30817"> </a><div class="pCellBody">
+SQLGetDiagRec
+</div>
+<a name="wp30818"> </a><div class="pCellBody">
+SQLGetEnvAttr
+</div>
+<a name="wp30819"> </a><div class="pCellBody">
+SQLGetFunctions
+</div>
+<a name="wp30820"> </a><div class="pCellBody">
+SQLGetInfo
+</div>
+<a name="wp30821"> </a><div class="pCellBody">
+SQLGetStmtAttr
+</div>
+<a name="wp30822"> </a><div class="pCellBody">
+SQLGetTypeInfo
+</div>
+<a name="wp30823"> </a><div class="pCellBody">
+SQLMoreResults
+</div>
+<a name="wp30824"> </a><div class="pCellBody">
+SQLNativeSql
+</div>
+</td>
+    <td><a name="wp44440"> </a><div class="pCellBody">
+SQLNumParams
+</div>
+<a name="wp44351"> </a><div class="pCellBody">
+SQLNumResultCols
+</div>
+<a name="wp44352"> </a><div class="pCellBody">
+SQLParamData
+</div>
+<a name="wp30829"> </a><div class="pCellBody">
+SQLPrepare
+</div>
+<a name="wp30830"> </a><div class="pCellBody">
+SQLPrimaryKeys 
+</div>
+<a name="wp30831"> </a><div class="pCellBody">
+SQLProcedureColumns 
+</div>
+<a name="wp30832"> </a><div class="pCellBody">
+SQLProcedures
+</div>
+<a name="wp30833"> </a><div class="pCellBody">
+SQLPutData
+</div>
+<a name="wp30834"> </a><div class="pCellBody">
+SQLRowCount
+</div>
+<a name="wp30835"> </a><div class="pCellBody">
+SQLSetConnectAttr
+</div>
+<a name="wp30836"> </a><div class="pCellBody">
+SQLSetCursorName
+</div>
+<a name="wp30837"> </a><div class="pCellBody">
+SQLSetDescField
+</div>
+<a name="wp30838"> </a><div class="pCellBody">
+SQLSetDescRec
+</div>
+<a name="wp30839"> </a><div class="pCellBody">
+SQLSetEnvAttr
+</div>
+<a name="wp30840"> </a><div class="pCellBody">
+SQLSetPos<font size="1"><sup>1</sup></font>
+</div>
+<a name="wp30841"> </a><div class="pCellBody">
+SQLSetStmtAttr
+</div>
+<a name="wp30842"> </a><div class="pCellBody">
+SQLSpecialColumns
+</div>
+<a name="wp30843"> </a><div class="pCellBody">
+SQLStatistics 
+</div>
+<a name="wp30844"> </a><div class="pCellBody">
+SQLTablePrivileges 
+</div>
+<a name="wp30845"> </a><div class="pCellBody">
+SQLTables
+</div>
+<a name="wp30846"> </a><div class="pCellBody">
+SQLTransact
+</div>
+</td>
+</tr>
+  <tr align="left">    <td colspan="3" rowspan="1"><a name="wp44272"> </a><div class="pCellBody">
+NOTE: SQLDescribeParam is not supported on Oracle databases. Instead, use the DataSourceEnableDescribeParam service attribute, described in the <em class="cEmphasis">SequeLink Administrator&#8217;s Guide</em>.
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="pTableTitleBold">
+</div>
+<a name="wp49113"> </a><h3 class="pHeading2">
+Support for Unicode ODBC W (Wide) Function Calls
+</h3>
+<a name="wp49143"> </a><p class="pBody">
+The ODBC driver fully supports the SQL-W functions. 
+</p>
+<a name="wp48658"> </a><p class="pBody">
+On both Windows and UNIX, the ODBC driver automatically determines whether the database is a Unicode database. <a  href="devodbc4.html#wp48860">Table&#160;2-5</a> shows how the ODBC driver maps the database data types to the Unicode data types.
+</p>
+<a name="wp48256"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption><a name="wp48860"> </a><div class="pTableTitleBold">
+Table 2-5.  Support for Unicode ODBC W (Wide) Function Calls
+</div>
+</caption>
+  <tr align="center">    <th><a name="wp48870"> </a><div class="pCellHeading">
+Unicode Data Type
+</div>
+</th>
+    <th colspan="4" rowspan="1"><a name="wp48872"> </a><div class="pCellHeading">
+Database Data Type
+</div>
+</th>
+</tr>
+  <tr align="center">    <th><a name="wp48880"> </a><div class="pCellHeading">
+&#160;
+</div>
+</th>
+    <th><a name="wp48882"> </a><div class="pCellHeading">
+DB2
+</div>
+</th>
+    <th><a name="wp48884"> </a><div class="pCellHeading">
+Oracle
+</div>
+</th>
+    <th><a name="wp48886"> </a><div class="pCellHeading">
+SQL Server
+</div>
+</th>
+    <th><a name="wp48888"> </a><div class="pCellHeading">
+Sybase1 
+</div>
+</th>
+</tr>
+  <tr align="left">    <td><a name="wp48890"> </a><div class="pCellBody">
+SQL_WCHAR 
+</div>
+</td>
+    <td><a name="wp48892"> </a><div class="pCellBody">
+Graphic
+</div>
+</td>
+    <td><a name="wp48894"> </a><div class="pCellBody">
+Char                                                                                          
+</div>
+</td>
+    <td><a name="wp48896"> </a><div class="pCellBody">
+Nchar
+</div>
+</td>
+    <td><a name="wp48898"> </a><div class="pCellBody">
+Char , Unichar
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp48900"> </a><div class="pCellBody">
+SQL_WLONGVARCHAR
+</div>
+</td>
+    <td><a name="wp48902"> </a><div class="pCellBody">
+Long, Vargraphic
+</div>
+</td>
+    <td><a name="wp48904"> </a><div class="pCellBody">
+Clob, 
+</div>
+<a name="wp49182"> </a><div class="pCellBody">
+Long  
+</div>
+</td>
+    <td><a name="wp48906"> </a><div class="pCellBody">
+Ntext
+</div>
+</td>
+    <td><a name="wp48908"> </a><div class="pCellBody">
+Text
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp48910"> </a><div class="pCellBody">
+SQL_WVARCHAR
+</div>
+</td>
+    <td><a name="wp48912"> </a><div class="pCellBody">
+Vargraphic
+</div>
+</td>
+    <td><a name="wp48914"> </a><div class="pCellBody">
+Varchar2 
+</div>
+</td>
+    <td><a name="wp48916"> </a><div class="pCellBody">
+Nvarchar, Sysname
+</div>
+</td>
+    <td><a name="wp48918"> </a><div class="pCellBody">
+Univarchar, Varchar
+</div>
+</td>
+</tr>
+  <tr align="left">    <td colspan="5" rowspan="1"><a name="wp48920"> </a><div class="pCellBody">
+1. The Unicode data types are supported if the UTF-8 character set is installed on the Sybase database.
+</div>
+<a name="wp49058"> </a><div class="pCellBody">
+2. On the SequeLink Server for ODBC Socket, the ODBC driver supports the data types of the backend database.
+</div>
+<a name="wp49079"> </a><div class="pCellBody">
+3. The ODBC driver does not support Unicode data types with SequeLink Server for Informix.
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:50:04" />
+  <title>Using Scrollable Cursors</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp14576"> </a><h1 class="pNewHTMLPageNoNum">
+Using Scrollable Cursors
+</h1>
+<hr /><a name="wp12866"> </a><p class="pBody">
+<em class="cEmphasis">Scrollable cursors</em> can move backward and forward in a result set, allowing the application user to scroll back and forth through requested data. SequeLink supports two types of scrollable cursors&#8212;static and keyset-driven.
+</p>
+<a name="wp12867"> </a><h3 class="pHeading2">
+Static and Keyset-Driven Cursors
+</h3>
+<a name="wp12870"> </a><p class="pBody">
+A <em class="cEmphasis">static cursor</em> is one that does not detect any changes made to the record after the cursor is opened. For example, if a static cursor fetches a row and another application then updates that row, the values would be unchanged when that row is fetched again. A <em class="cEmphasis">keyset-driven</em> cursor detects value changes to the record using keys that are saved when the cursor is opened to retrieve the current data values for each row.
+</p>
+<a name="wp12872"> </a><p class="pBody">
+The type of scrollable cursors that can be used depend on the data store to which you are connecting. <a  href="devodbc8.html#wp12883">Table&#160;2-8</a> shows the type of scrollable cursors supported for each database.
+</p>
+<a name="wp15904"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption><a name="wp12883"> </a><div class="pTableTitleBold">
+Table 2-8.  Support for Scrollable Cursors (ODBC) &#160;
+</div>
+</caption>
+  <tr align="center">    <th><a name="wp12889"> </a><div class="pCellHeading">
+Database
+</div>
+</th>
+    <th><a name="wp12891"> </a><div class="pCellHeading">
+Static
+</div>
+</th>
+    <th><a name="wp12893"> </a><div class="pCellHeading">
+Keyset-Driven
+</div>
+</th>
+</tr>
+  <tr align="left">    <td><a name="wp12895"> </a><div class="pCellBody">
+DB2 on OS/390 
+</div>
+</td>
+    <td><a name="wp12897"> </a><div class="pCellBody">
+X
+</div>
+</td>
+    <td><a name="wp12899"> </a><div class="pCellBody">
+&#160;
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp18757"> </a><div class="pCellBody">
+DB2 UDB on Windows 
+</div>
+</td>
+    <td><a name="wp18759"> </a><div class="pCellBody">
+X
+</div>
+</td>
+    <td><a name="wp18761"> </a><div class="pCellBody">
+&#160;
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp18188"> </a><div class="pCellBody">
+Informix
+</div>
+</td>
+    <td><a name="wp18436"> </a><div class="pCellBody">
+X
+</div>
+</td>
+    <td><a name="wp18438"> </a><div class="pCellBody">
+X
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp12901"> </a><div class="pCellBody">
+Microsoft SQL Server (see note)
+</div>
+</td>
+    <td><a name="wp18432"> </a><div class="pCellBody">
+X
+</div>
+</td>
+    <td><a name="wp18434"> </a><div class="pCellBody">
+X
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp26623"> </a><div class="pCellBody">
+ODBC Socket
+</div>
+</td>
+    <td><a name="wp26625"> </a><div class="pCellBody">
+X
+</div>
+</td>
+    <td><a name="wp26627"> </a><div class="pCellBody">
+&#160;
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp12907"> </a><div class="pCellBody">
+Oracle8 and Oracle9
+</div>
+</td>
+    <td><a name="wp12909"> </a><div class="pCellBody">
+X
+</div>
+</td>
+    <td><a name="wp12911"> </a><div class="pCellBody">
+X
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp18194"> </a><div class="pCellBody">
+Sybase (see note)
+</div>
+</td>
+    <td><a name="wp18440"> </a><div class="pCellBody">
+X
+</div>
+</td>
+    <td><a name="wp18442"> </a><div class="pCellBody">
+X
+</div>
+</td>
+</tr>
+  <tr align="left">    <td colspan="3" rowspan="1"><a name="wp18454"> </a><div class="pCellBody">
+NOTE: To use keyset-driven cursors with Microsoft SQL Server and Sybase, the table must contain an identity column.
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp12913"> </a><h3 class="pHeading2">
+Using Static Scrollable Cursors
+</h3>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp12914"> </a><div class="pSmartList1"><li>The ODBC driver supports static cursors for all types of result set generating statements, including result sets generated by stored procedures.</li></div><a name="wp14988"> </a><div class="pSmartList1"><li>The ODBC driver supports LOB data for static cursors; however, by default, only the first 4096 bytes of the LOB column is buffered. See the SLKStaticCursorLongColBuffLen connection attribute in <a  href="useodbc7.html#wp532532">Table&#160;1-1</a> for more information about specifying the amount of data that is buffered.</li></div><a name="wp23305"> </a><div class="pSmartList1"><li>To persist a result set as an XML data file with embedded schema, you must use static cursors. See <a  href="devodbc11.html#wp24757">&quot;Persisting a Result Set as an XML Data File&quot;</a> for more information about persisting XML data files. </li></div></ul></div>
+<a name="wp15010"> </a><h3 class="pHeading2">
+Using Keyset-Driven Scrollable Cursors
+</h3>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp12915"> </a><div class="pSmartList1"><li>The ODBC driver does not support using keyset-driven cursors on stored procedures or explicit batches.</li></div><a name="wp12916"> </a><div class="pSmartList1"><li>The ODBC driver cannot use keyset-driven cursors, when the Select statement contains any of the following SQL language constructions:</li></div><div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp12917"> </a><div class="pSmartList2"><li>JOIN</li></div>
+<a name="wp12918"> </a><div class="pSmartList2"><li>Aggregate functions</li></div>
+<a name="wp12919"> </a><div class="pSmartList2"><li>GROUP BY</li></div>
+<a name="wp26787"> </a><div class="pSmartList2"><li>(Informix only). When a fragmented table is not explicitly created with the WITH ROWIDS clause, the ODBC driver returns SQL_SUCCESS_WITH_INFO, with the message that a static cursor was substituted.</li></div>
+</ul></div>
+</ul></div>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

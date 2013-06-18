@@ -1,0 +1,678 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 14:09:25" />
+  <title>Supported Data Types</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp821285"> </a><h1 class="pNewHTMLPageNoNum">
+Supported Data Types
+</h1>
+<hr /><a name="wp821287"> </a><p class="pBody">
+Retrieving and sending certain data types can be expensive. Select the data type that can be processed most efficiently. For example, integer data is processed faster than floating-point data. Floating-point data is defined according to internal database-specific formats, usually in a compressed format. The data must be decompressed and converted into a different format so that it can be processed by the wire protocol.
+</p>
+<a name="wp571195"> </a><p class="pBody">
+Processing time is shortest for character strings, followed by integers, which usually require some conversion or byte ordering. Processing floating-point data and timestamps is at least twice as slow as integers.
+</p>
+<a name="wp821349"> </a><h3 class="pHeading2">
+DB2 on OS/390
+</h3>
+<a name="wp890150"> </a><p class="pBody">
+The following table lists the data types that the ODBC driver supports for DB2 V5, V6, and V7 on OS/390 and z/OS.
+</p>
+<a name="wp890283"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption><a name="wp890157"> </a><div class="pTableTitleBold">
+Table B-1.  Mapping Data Types for DB2 on OS/390 to ODBC Data Types &#160;
+</div>
+</caption>
+  <tr align="center">    <th><a name="wp890163"> </a><div class="pCellHeading">
+DB2 V5 Data Type
+</div>
+</th>
+    <th><a name="wp890165"> </a><div class="pCellHeading">
+DB2 V6, V7 Data Type
+</div>
+</th>
+    <th><a name="wp890167"> </a><div class="pCellHeading">
+ODBC Data Type (ANSI)
+</div>
+</th>
+</tr>
+  <tr align="left">    <td><a name="wp890169"> </a><div class="pCellBody">
+CHAR(size)
+</div>
+</td>
+    <td><a name="wp890171"> </a><div class="pCellBody">
+CHAR(size)
+</div>
+</td>
+    <td><a name="wp890173"> </a><div class="pCellBody">
+SQL_CHAR 
+</div>
+<a name="wp890174"> </a><div class="pCellBody">
+SQL_TIMESTAMP  Note 1
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890176"> </a><div class="pCellBody">
+CHAR(size) FOR BIT DATA
+</div>
+</td>
+    <td><a name="wp890178"> </a><div class="pCellBody">
+CHAR(size) FOR BIT DATA
+</div>
+</td>
+    <td><a name="wp890180"> </a><div class="pCellBody">
+SQL_BINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890182"> </a><div class="pCellBody">
+&#160;
+</div>
+</td>
+    <td><a name="wp890184"> </a><div class="pCellBody">
+CLOB
+</div>
+</td>
+    <td><a name="wp890186"> </a><div class="pCellBody">
+SQL_LONGVARCHAR
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890188"> </a><div class="pCellBody">
+DATE
+</div>
+</td>
+    <td><a name="wp890190"> </a><div class="pCellBody">
+DATE
+</div>
+</td>
+    <td><a name="wp890192"> </a><div class="pCellBody">
+SQL_DATE
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890194"> </a><div class="pCellBody">
+&#160;
+</div>
+</td>
+    <td><a name="wp890196"> </a><div class="pCellBody">
+DBCLOB  Note 1
+</div>
+</td>
+    <td><a name="wp890198"> </a><div class="pCellBody">
+SQL_WLONGVARCHAR  
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890200"> </a><div class="pCellBody">
+DECIMAL
+</div>
+</td>
+    <td><a name="wp890202"> </a><div class="pCellBody">
+DECIMAL
+</div>
+</td>
+    <td><a name="wp890204"> </a><div class="pCellBody">
+SQL_DECIMAL
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890206"> </a><div class="pCellBody">
+FLOAT
+</div>
+</td>
+    <td><a name="wp890208"> </a><div class="pCellBody">
+FLOAT
+</div>
+</td>
+    <td><a name="wp890210"> </a><div class="pCellBody">
+SQL_FLOAT
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890212"> </a><div class="pCellBody">
+&#160;
+</div>
+</td>
+    <td><a name="wp890214"> </a><div class="pCellBody">
+GRAPHIC(size)  Note 1
+</div>
+</td>
+    <td><a name="wp890216"> </a><div class="pCellBody">
+SQL_WCHAR
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890218"> </a><div class="pCellBody">
+INTEGER
+</div>
+</td>
+    <td><a name="wp890220"> </a><div class="pCellBody">
+INTEGER
+</div>
+</td>
+    <td><a name="wp890222"> </a><div class="pCellBody">
+SQL_INTEGER
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890224"> </a><div class="pCellBody">
+LONG VARCHAR 
+</div>
+</td>
+    <td><a name="wp890226"> </a><div class="pCellBody">
+LONGVARCHAR
+</div>
+</td>
+    <td><a name="wp890228"> </a><div class="pCellBody">
+SQL_LONGVARCHAR
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890230"> </a><div class="pCellBody">
+LONG VARCHAR FOR BIT DATA
+</div>
+</td>
+    <td><a name="wp890232"> </a><div class="pCellBody">
+LONGVARBINARY
+</div>
+</td>
+    <td><a name="wp890234"> </a><div class="pCellBody">
+SQL_LONGVARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890236"> </a><div class="pCellBody">
+REAL
+</div>
+</td>
+    <td><a name="wp890238"> </a><div class="pCellBody">
+REAL
+</div>
+</td>
+    <td><a name="wp890240"> </a><div class="pCellBody">
+SQL_REAL
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890242"> </a><div class="pCellBody">
+&#160;
+</div>
+</td>
+    <td><a name="wp890244"> </a><div class="pCellBody">
+ROWID
+</div>
+</td>
+    <td><a name="wp890246"> </a><div class="pCellBody">
+SQL_VARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890248"> </a><div class="pCellBody">
+SMALLINT
+</div>
+</td>
+    <td><a name="wp890250"> </a><div class="pCellBody">
+SMALLINT
+</div>
+</td>
+    <td><a name="wp890252"> </a><div class="pCellBody">
+SQL_SMALLINT
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890254"> </a><div class="pCellBody">
+TIME
+</div>
+</td>
+    <td><a name="wp890256"> </a><div class="pCellBody">
+TIME
+</div>
+</td>
+    <td><a name="wp890258"> </a><div class="pCellBody">
+SQL_TIME
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890260"> </a><div class="pCellBody">
+TIMESTAMP
+</div>
+</td>
+    <td><a name="wp890262"> </a><div class="pCellBody">
+TIMESTAMP
+</div>
+</td>
+    <td><a name="wp890264"> </a><div class="pCellBody">
+SQL_TIMESTAMP
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890266"> </a><div class="pCellBody">
+VARCHAR(size)
+</div>
+</td>
+    <td><a name="wp890268"> </a><div class="pCellBody">
+VARCHAR(size)
+</div>
+</td>
+    <td><a name="wp890270"> </a><div class="pCellBody">
+SQL_VARCHAR 
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890272"> </a><div class="pCellBody">
+VARCHAR(size) FOR BIT DATA
+</div>
+</td>
+    <td><a name="wp890274"> </a><div class="pCellBody">
+VARCHAR(size) FOR BIT DATA
+</div>
+</td>
+    <td><a name="wp890276"> </a><div class="pCellBody">
+SQL_VARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td colspan="3" rowspan="1"><a name="wp890278"> </a><div class="pCellBody">
+NOTE 1 The setting of DataSourceFetchTimestampAsString determines whether timestamps are fetched as character strings.
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp835078"> </a><h3 class="pHeading2">
+DB2 UDB V7, V8
+</h3>
+<a name="wp890952"> </a><p class="pBody">
+The following table lists the data types that the ODBC driver DB2 UDB V7 and V8 . 
+</p>
+<a name="wp779592"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption><a name="wp890959"> </a><div class="pTableTitleBold">
+Table B-2.  Mapping DB2 UDB Data Types to ODBC Data Types &#160;
+</div>
+</caption>
+  <tr align="center">    <th><a name="wp890965"> </a><div class="pCellHeading">
+DB2 SQL Data Type
+</div>
+</th>
+    <th><a name="wp890967"> </a><div class="pCellHeading">
+ODBC Data Types (Non-Unicode Service)
+</div>
+</th>
+    <th><a name="wp890969"> </a><div class="pCellHeading">
+ODBC Data Types <br />(Unicode Service)
+</div>
+</th>
+</tr>
+  <tr align="left">    <td><a name="wp890971"> </a><div class="pCellBody">
+BIGINT
+</div>
+</td>
+    <td><a name="wp890973"> </a><div class="pCellBody">
+SQL_BIGINT
+</div>
+</td>
+    <td><a name="wp890975"> </a><div class="pCellBody">
+SQL_BIGINT
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890977"> </a><div class="pCellBody">
+BLOB  Note 1
+</div>
+</td>
+    <td><a name="wp890979"> </a><div class="pCellBody">
+SQL_LONGVARBINARY
+</div>
+</td>
+    <td><a name="wp890981"> </a><div class="pCellBody">
+SQL_LONGVARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890983"> </a><div class="pCellBody">
+CHAR(size)
+</div>
+</td>
+    <td><a name="wp890985"> </a><div class="pCellBody">
+SQL_CHAR  
+</div>
+</td>
+    <td><a name="wp890987"> </a><div class="pCellBody">
+SQL_CHAR  Note 3
+</div>
+<a name="wp890988"> </a><div class="pCellBody">
+SQL_WCHAR  
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890990"> </a><div class="pCellBody">
+CHAR(size) FOR BIT DATA
+</div>
+</td>
+    <td><a name="wp890992"> </a><div class="pCellBody">
+SQL_BINARY
+</div>
+</td>
+    <td><a name="wp890994"> </a><div class="pCellBody">
+SQL_BINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp890996"> </a><div class="pCellBody">
+CLOB  Note 1
+</div>
+</td>
+    <td><a name="wp890998"> </a><div class="pCellBody">
+SQL_LONGVARCHAR
+</div>
+</td>
+    <td><a name="wp891000"> </a><div class="pCellBody">
+SQL_WLONGVARCHAR  Note 5
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891002"> </a><div class="pCellBody">
+DATE
+</div>
+</td>
+    <td><a name="wp891004"> </a><div class="pCellBody">
+SQL_DATE
+</div>
+</td>
+    <td><a name="wp891006"> </a><div class="pCellBody">
+SQL_DATE
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891008"> </a><div class="pCellBody">
+DBCLOB  Note 4
+</div>
+</td>
+    <td><a name="wp891010"> </a><div class="pCellBody">
+Not supported
+</div>
+</td>
+    <td><a name="wp891012"> </a><div class="pCellBody">
+SQL_WLONGVARCHAR
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891014"> </a><div class="pCellBody">
+DECIMAL
+</div>
+</td>
+    <td><a name="wp891016"> </a><div class="pCellBody">
+SQL_DECIMAL
+</div>
+</td>
+    <td><a name="wp891018"> </a><div class="pCellBody">
+SQL_DECIMAL
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891020"> </a><div class="pCellBody">
+FLOAT
+</div>
+</td>
+    <td><a name="wp891022"> </a><div class="pCellBody">
+SQL_DOUBLE
+</div>
+<a name="wp891023"> </a><div class="pCellBody">
+SQL_FLOAT
+</div>
+</td>
+    <td><a name="wp891025"> </a><div class="pCellBody">
+SQL_DOUBLE
+</div>
+<a name="wp891026"> </a><div class="pCellBody">
+SQL_FLOAT
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891028"> </a><div class="pCellBody">
+GRAPHIC(size)  Note 4
+</div>
+</td>
+    <td><a name="wp891030"> </a><div class="pCellBody">
+Not supported
+</div>
+</td>
+    <td><a name="wp891032"> </a><div class="pCellBody">
+SQL_WCHAR
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891034"> </a><div class="pCellBody">
+INTEGER
+</div>
+</td>
+    <td><a name="wp891036"> </a><div class="pCellBody">
+SQL_INTEGER
+</div>
+</td>
+    <td><a name="wp891038"> </a><div class="pCellBody">
+SQL_INTEGER
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891040"> </a><div class="pCellBody">
+LONG VARCHAR  Note 1
+</div>
+</td>
+    <td><a name="wp891042"> </a><div class="pCellBody">
+SQL_LONGVARCHAR
+</div>
+</td>
+    <td><a name="wp891044"> </a><div class="pCellBody">
+SQL_LONGVARCHAR  Note 3
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891046"> </a><div class="pCellBody">
+LONG VARCHAR FOR BIT DATA  Note 1
+</div>
+</td>
+    <td><a name="wp891048"> </a><div class="pCellBody">
+SQL_LONGVARBINARY
+</div>
+</td>
+    <td><a name="wp891050"> </a><div class="pCellBody">
+SQL_LONGVARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891052"> </a><div class="pCellBody">
+LONG VARGRAPHIC Note&#160;4
+</div>
+</td>
+    <td><a name="wp891054"> </a><div class="pCellBody">
+Not supported
+</div>
+</td>
+    <td><a name="wp891056"> </a><div class="pCellBody">
+SQL_WLONGVARCHAR  
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891058"> </a><div class="pCellBody">
+NUMERIC
+</div>
+</td>
+    <td><a name="wp891060"> </a><div class="pCellBody">
+SQL_NUMERIC
+</div>
+</td>
+    <td><a name="wp891062"> </a><div class="pCellBody">
+SQL_NUMERIC
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891064"> </a><div class="pCellBody">
+REAL
+</div>
+</td>
+    <td><a name="wp891066"> </a><div class="pCellBody">
+SQL_REAL
+</div>
+</td>
+    <td><a name="wp891068"> </a><div class="pCellBody">
+SQL_REAL
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891070"> </a><div class="pCellBody">
+SMALLINT
+</div>
+</td>
+    <td><a name="wp891072"> </a><div class="pCellBody">
+SQL_SMALLINT
+</div>
+</td>
+    <td><a name="wp891074"> </a><div class="pCellBody">
+SQL_SMALLINT
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891076"> </a><div class="pCellBody">
+TIME
+</div>
+</td>
+    <td><a name="wp891078"> </a><div class="pCellBody">
+SQL_TIME
+</div>
+</td>
+    <td><a name="wp891080"> </a><div class="pCellBody">
+SQL_TIME
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891082"> </a><div class="pCellBody">
+TIMESTAMP
+</div>
+</td>
+    <td><a name="wp891084"> </a><div class="pCellBody">
+SQL_TIMESTAMP 
+</div>
+<a name="wp891085"> </a><div class="pCellBody">
+SQL_CHAR  Note 2
+</div>
+</td>
+    <td><a name="wp891087"> </a><div class="pCellBody">
+SQL_TIMESTAMP
+</div>
+<a name="wp891088"> </a><div class="pCellBody">
+SQL_CHAR  Note 2
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891090"> </a><div class="pCellBody">
+VARCHAR(size)
+</div>
+</td>
+    <td><a name="wp891092"> </a><div class="pCellBody">
+SQL_VARCHAR 
+</div>
+</td>
+    <td><a name="wp891094"> </a><div class="pCellBody">
+SQL_VARCHAR  Note 3 
+</div>
+<a name="wp891095"> </a><div class="pCellBody">
+SQL_WVARCHAR
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891097"> </a><div class="pCellBody">
+VARCHAR(size) FOR BIT DATA
+</div>
+</td>
+    <td><a name="wp891099"> </a><div class="pCellBody">
+SQL_VARBINARY
+</div>
+</td>
+    <td><a name="wp891101"> </a><div class="pCellBody">
+SQL_VARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp891103"> </a><div class="pCellBody">
+VARGRAPHIC(size)  Note&#160;4
+</div>
+</td>
+    <td><a name="wp891105"> </a><div class="pCellBody">
+Not supported
+</div>
+</td>
+    <td><a name="wp891107"> </a><div class="pCellBody">
+SQL_WVARCHAR
+</div>
+</td>
+</tr>
+  <tr align="left">    <td colspan="3" rowspan="1"><a name="wp891109"> </a><div class="pCellBody">
+NOTES:
+</div>
+<a name="wp891110"> </a><div class="pCellBody">
+1 Depends on setting of the DataSourceLobAsLongvar service attribute. When set to False, LOB data types will be handled as LOB objects; when set to True, LOB data types are handled as Longvar data types.
+</div>
+<a name="wp891111"> </a><div class="pCellBody">
+2 DataSourceFetchTimestampAsString specifies whether timestamps are fetched as character strings.
+</div>
+<a name="wp891112"> </a><div class="pCellBody">
+3 If DataSourceReportChar is enabled, the CHAR, VARCHAR, LONGVARCHAR data types are additionally reported as the non-Unicode data types (see previous table)
+</div>
+<a name="wp891113"> </a><div class="pCellBody">
+4 If DataSourceDB2GraphicSupport is enabled, the GRAPHIC datatypes will be available.
+</div>
+<a name="wp891114"> </a><div class="pCellBody">
+5 Depending on DataSourceReportLobAsLongVarchar: if set to TRUE: LONGVARCHAR data types are reported; if set to FALSE: LOB data types are reported. 
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp795757"> </a><p class="pBody">
+
+</p>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

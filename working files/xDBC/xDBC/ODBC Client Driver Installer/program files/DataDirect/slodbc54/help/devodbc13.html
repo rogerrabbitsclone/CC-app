@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:50:04" />
+  <title>Developing Performance-Optimized ODBC Applications</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp16794"> </a><h1 class="pNewHTMLPageNoNum">
+Developing Performance-Optimized ODBC Applications
+</h1>
+<hr /><a name="wp13207"> </a><p class="pBody">
+This section provides general guidelines for optimizing system performance that have been compiled by examining how numerous shipping ODBC applications have been implemented. These guidelines are divided into the following categories: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp13211"> </a><div class="pSmartList1"><li><a  href="devodbc13.html#wp13229">&quot;Catalog Functions&quot;</a> </li></div><a name="wp13215"> </a><div class="pSmartList1"><li><a  href="devodbc13.html#wp13297">&quot;Retrieving Data&quot;</a> </li></div><a name="wp13219"> </a><div class="pSmartList1"><li><a  href="devodbc13.html#wp13350">&quot;ODBC Function Selection&quot;</a> </li></div><a name="wp13223"> </a><div class="pSmartList1"><li><a  href="devodbc13.html#wp13392">&quot;Designing ODBC Applications&quot;</a> </li></div><a name="wp13227"> </a><div class="pSmartList1"><li><a  href="devodbc13.html#wp13405">&quot;Updating Data&quot;</a></li></div></ul></div>
+<a name="wp13229"> </a><h3 class="pHeading2">
+Catalog Functions
+</h3>
+<a name="wp13243"> </a><p class="pBody">
+The following ODBC functions are catalog functions: 
+</p>
+<a name="wp16004"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption></caption>
+  <tr align="left">    <td><div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp13232"> </a><div class="pSmartList1"><li>SQLColumns</li></div><a name="wp13233"> </a><div class="pSmartList1"><li>SQLColumnPrivileges</li></div><a name="wp13234"> </a><div class="pSmartList1"><li>SQLForeignKeys</li></div><a name="wp13235"> </a><div class="pSmartList1"><li>SQLProcedures</li></div><a name="wp13236"> </a><div class="pSmartList1"><li>SQLProcedureColumns</li></div></ul></div>
+</td>
+    <td><div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp13239"> </a><div class="pSmartList1"><li>SQLSpecialColumns</li></div><a name="wp13240"> </a><div class="pSmartList1"><li>SQLStatistics</li></div><a name="wp13241"> </a><div class="pSmartList1"><li>SQLTables</li></div><a name="wp13242"> </a><div class="pSmartList1"><li>SQLTablePrivileges</li></div></ul></div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp13245"> </a><h4 class="pHeading3">
+Minimizing the Use of Catalog Functions
+</h4>
+<a name="wp13246"> </a><p class="pBody">
+Compared to other ODBC functions, catalog functions are relatively slow. By caching information returned from catalog functions, applications can avoid multiple executions. 
+</p>
+<a name="wp13247"> </a><p class="pBody">
+While almost no ODBC application can be written without using catalog functions, you can improve performance by minimizing their use. To return all result column information mandated<span style="font-style: italic"> </span>by the ODBC specification, an ODBC driver may have to perform multiple queries, joins, subqueries, and unions to return the required result set for a single call to a catalog function. These particular elements of the SQL language are performance expenses.
+</p>
+<a name="wp13248"> </a><p class="pBody">
+Applications should cache information from catalog functions. 
+</p>
+<a name="wp13249"> </a><h4 class="pHeading3">
+Avoiding Search Patterns
+</h4>
+<a name="wp13250"> </a><p class="pBody">
+Passing null arguments to catalog functions generates time-consuming queries. In addition, network traffic may increase because of unwanted result set information. Always supply as many non-null arguments to catalog functions as possible.
+</p>
+<a name="wp13251"> </a><p class="pBody">
+Because catalog functions are slow, applications should invoke them efficiently. Any information that the application can send the driver when calling catalog functions can result in improved performance and reliability. However, many applications pass the minimum number of non-null arguments required for the function to return a successful result set.
+</p>
+<a name="wp13252"> </a><p class="pBody">
+For example, consider a call to SQLTables where the application requests information about the table &#8220;Customers.&#8221; Often, this call is coded as shown:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLTables (NULL, NULL, NULL, NULL, &#8220;Customers&#8221;, SQL_NTS, NULL);<a name="wp13253"> </a>
+</pre></div>
+<a name="wp13254"> </a><p class="pBody">
+A driver may process this SQLTables call into SQL as shown:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+SELECT ... FROM SysTables WHERE TableName = &#8216;Customers&#8217; UNION ALL<a name="wp13255"> </a>
+SELECT ... FROM SysViews WHERE ViewName = &#8216;Customers&#8217; UNION ALL<a name="wp13256"> </a>
+SELECT ... FROM SysSynonyms WHERE SynName = &#8216;Customers&#8217;<a name="wp13257"> </a>
+ORDER BY ...<a name="wp13258"> </a>
+</pre></div>
+<a name="wp13259"> </a><p class="pBody">
+In this example, the application provided little information about the object for which information was requested. Suppose three &#8220;Customers&#8221; tables were returned in the result set: 
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp13261"> </a><div class="pSmartList1"><li>The first table was owned by the user.</li></div><a name="wp13262"> </a><div class="pSmartList1"><li>The second table was owned by the sales department.</li></div><a name="wp13263"> </a><div class="pSmartList1"><li>The third table was a view created by management.</li></div></ul></div>
+<a name="wp13264"> </a><p class="pBody">
+It may not be obvious to the user<span style="font-style: italic"> </span>which table to choose. If the application had specified the OwnerName argument for the SQLTables call, only one table would be returned and performance would improve. Less network traffic would be required to return only one result row and unnecessary rows would be filtered by the database. 
+</p>
+<a name="wp20970"> </a><p class="pBody">
+In addition, if the TableType argument can be supplied, the SQL sent to the server can be changed from a three-query union to a single Select statement as shown:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+SELECT ... FROM SysTables <a name="wp13265"> </a>
+WHERE TableName = &#8216;Customers&#8217; and Owner = &#8216;Beth&#8217;<a name="wp13266"> </a>
+</pre></div>
+<a name="wp13267"> </a><h4 class="pHeading3">
+Determining Table Characteristics with a Dummy Query
+</h4>
+<a name="wp13268"> </a><p class="pBody">
+Avoid using SQLColumns to determine table characteristics. Instead, use a dummy query with SQLDescribeCol.
+</p>
+<a name="wp13269"> </a><p class="pBody">
+Consider an application that allows the user to choose columns. Should the application use SQLColumns to return information about the columns to the user or prepare a dummy query and call SQLDescribeCol?
+</p>
+<a name="wp13270"> </a><p class="pBodyBold">
+Case 1: SQLColumns Method
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLColumns (... &#8220;UnknownTable&#8221; ...);<a name="wp13271"> </a>
+// This call to SQLColumns will generate a query to<a name="wp13272"> </a>
+// the system catalogs... possibly a join which must be<a name="wp13273"> </a>
+// prepared, executed, and produce a result set<a name="wp13274"> </a>
+rc = SQLBindCol (...);<a name="wp13275"> </a>
+rc = SQLExtendedFetch (...);<a name="wp13276"> </a>
+// user must retrieve N rows from the server<a name="wp13277"> </a>
+// N = # result columns of UnknownTable<a name="wp13278"> </a>
+// result column information has now been obtained<a name="wp13279"> </a>
+</pre></div>
+<a name="wp13280"> </a><p class="pBodyBold">
+Case 2: SQLDescribeCol Method
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+// prepare dummy query <a name="wp13281"> </a>
+rc = SQLPrepare (... &#8220;SELECT * from UnknownTable<a name="wp13282"> </a>
+    WHERE 1 = 0&#8221; ...);<a name="wp13283"> </a>
+// query is never executed on the server - only prepared<a name="wp13284"> </a>
+rc = SQLNumResultCols (...);<a name="wp13285"> </a>
+for (irow = 1; irow &lt;= NumColumns; irow++) {<a name="wp13286"> </a>
+   rc = SQLDescribeCol (...)<a name="wp13287"> </a>
+   // + optional calls to SQLColAttributes<a name="wp13288"> </a>
+   }<a name="wp13289"> </a>
+// result column information has now been obtained<a name="wp13290"> </a>
+// Note we also know the column ordering within the table!<a name="wp13291"> </a>
+// This information cannot be<a name="wp13292"> </a>
+// assumed from the SQLColumns example.<a name="wp13293"> </a>
+</pre></div>
+<a name="wp13294"> </a><p class="pBody">
+In both cases, a query is sent to the server. In Case 1, the query must be evaluated and form a result set that is returned to the client. Case 2 is the better performing model. 
+</p>
+<a name="wp20986"> </a><p class="pBody">
+To complicate this discussion, consider a DBMS server that does not support natively preparing a SQL statement. The performance of Case 1 would not change, but the performance of Case 2 would improve slightly, because the dummy query must be evaluated before being prepared. Because the Where clause of the query always evaluates to FALSE, the query generates no result rows and is processed without accessing table data. Again, Case 2 performs better than Case 1.
+</p>
+<a name="wp20988"> </a><h4 class="pHeading3">
+Managing the Retrieval of Database Meta-Information
+</h4>
+<a name="wp15577"> </a><p class="pBody">
+<em class="cEmphasis">Meta-information</em> is information that describes the data stored in the database and can include information about the tables in the database, the columns in those tables, and the indexes that are defined for those tables. This data also is referred to as the database&#8217;s <em class="cEmphasis">data dictionary</em> or <em class="cEmphasis">system catalog</em>.
+</p>
+<a name="wp15578"> </a><p class="pBody">
+Typically, ODBC, OLE DB, and JDBC applications extract and use information from the database&#8217;s data dictionary using specific calls, such as the ODBC calls SQLTables, SQLColumns, and SQLPrimaryKeys. In large databases, the amount of meta-information that is retrieved can be considerable. Because some client applications cannot manage large amounts of information efficiently, system performance can be adversely affected.
+</p>
+<a name="wp15580"> </a><p class="pBody">
+Some ODBC, OLE DB, and JDBC calls have parameters that accept search patterns. You can use these parameters to limit the amount of meta-information that is retrieved; however, not every client application supports these parameters.
+</p>
+<a name="wp15581"> </a><p class="pBody">
+SequeLink allows you to use database data dictionary filters and database data dictionary views to limit the amount of meta-information that is retrieved.
+</p>
+<a name="wp15386"> </a><h5 class="pHeading4">
+Using Database Data Dictionary Filters
+</h5>
+<a name="wp15390"> </a><p class="pBody">
+Database Data Dictionary filters limit the amount of meta-information that can be retrieved from the database&#8217;s native data dictionary. Specifically, they limit the number of result rows that can be returned for SQLTables. The data dictionary filters override any call parameters that are passed by the application when it accesses the database&#8217;s native data dictionary.
+</p>
+<a name="wp15391"> </a><p class="pBody">
+SequeLink provides the following types of database data dictionary filters, which must be defined on the server:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp15392"> </a><div class="pSmartList1"><li>Filter by catalog list</li></div><a name="wp15393"> </a><div class="pSmartList1"><li>Filter by schema list</li></div><a name="wp15394"> </a><div class="pSmartList1"><li>Filter by table type</li></div><a name="wp15395"> </a><div class="pSmartList1"><li>Filter by database (DB2 for z/OS only)</li></div></ul></div>
+<a name="wp21097"> </a><p class="pBody">
+For more information about setting the database data dictionary filters for a SequeLink service, refer to the <em class="cEmphasis">SequeLink Administrator&#8217;s Guide</em>.
+</p>
+<a name="wp21136"> </a><h5 class="pHeading4">
+Using Database Data Dictionary Views 
+</h5>
+<a name="wp21138"> </a><p class="pBody">
+The DataSourceDB2CatalogOwner service attribute on the server allows you to limit the meta-information that is returned by using views on the database data dictionary. Database Data Dictionary views are supported for DB2 for z/OS only. For more information about setting the DataSourceDB2CatalogOwner service attribute, refer to the <em class="cEmphasis">SequeLink Administrator&#8217;s Guide</em>.
+</p>
+<a name="wp13297"> </a><h3 class="pHeading2">
+Retrieving Data
+</h3>
+<a name="wp13298"> </a><p class="pBody">
+This section provides general guidelines for retrieving data with ODBC applications.
+</p>
+<a name="wp13299"> </a><h4 class="pHeading3">
+Retrieving Long Data
+</h4>
+<a name="wp13300"> </a><p class="pBody">
+Unless it is necessary, applications should not request long data (SQL_LONGVARCHAR and SQL_LONGVARBINARY data), because retrieving long data across a network is slow and resource-intensive.
+</p>
+<a name="wp13301"> </a><p class="pBody">
+Most users do not want to see long data. If the user does need to see these result items, the application can query the database again, specifying only the long columns in the select list. This method allows the average user to retrieve result sets without having to pay a high performance penalty for network traffic.
+</p>
+<a name="wp13302"> </a><p class="pBody">
+Although the best method is to exclude long data from the select list, some applications do not formulate the select list before sending the query to the ODBC driver (for example, some applications <code class="cCode">select * from </code><em class="cEmphasis">table_name</em><code class="cCode"> ...</code>). If the select list contains long data, the driver must retrieve that data at fetch time, even if the application does not bind the long data in the result set. When possible, the application developer should use a method that does not retrieve all columns of the table.
+</p>
+<a name="wp13303"> </a><h4 class="pHeading3">
+Reducing the Size of Retrieved Data
+</h4>
+<a name="wp20997"> </a><p class="pBody">
+To reduce network traffic and improve performance, you can reduce the size of data being retrieved to a manageable limit by calling SQLSetStmtOption with the SQL_MAX_LENGTH option. Although eliminating SQL_LONGVARCHAR and SQL_LONGVARBINARY data from the result set is ideal for performance optimization, sometimes, long data must be retrieved. When this is the case, remember that most users do not want to see 100 KB, or more, of text on the screen. What techniques, if any, are available to limit the amount of data retrieved?
+</p>
+<a name="wp13305"> </a><p class="pBody">
+Many application developers mistakenly assume that if they call SQLGetData with a container of size <code><em>x</em></code>, the ODBC driver only retrieves <code><em>x</em></code> bytes of information from the server. Because SQLGetData can be called multiple times for any one column, the driver optimizes its network use by retrieving long data in large chunks and returning it to the user when requested. 
+</p>
+<a name="wp15624"> </a><p class="pBody">
+For example:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+char CaseContainer[1000];<a name="wp13306"> </a>
+...<a name="wp13307"> </a>
+rc = SQLExecDirect (hstmt, &#8220;SELECT CaseHistory FROM Cases <a name="wp13308"> </a>
+   WHERE CaseNo = 71164&#8221;, SQL_NTS);<a name="wp13309"> </a>
+...<a name="wp13310"> </a>
+rc = SQLFetch (hstmt);<a name="wp13311"> </a>
+rc = SQLGetData (hstmt, 1, CaseContainer,(SWORD)<a name="wp13312"> </a>
+   sizeof(CaseContainer), ...);<a name="wp13313"> </a>
+</pre></div>
+<a name="wp13314"> </a><p class="pBody">
+At this point, it is more likely that an ODBC driver will retrieve 64&#160;KB of information from the server, rather than 1000&#160;bytes. One 64-KB retrieval requires less network traffic than 64 1000-byte retrievals. Unfortunately, the application might not call SQLGetData again; thus, the first and only retrieval of CaseHistory would be slowed by the fact that 64 KB of data had to be sent across the network.
+</p>
+<a name="wp13315"> </a><p class="pBody">
+Many ODBC drivers allow you to limit the amount of data retrieved across the network by using the statement attribute SQL_MAX_LENGTH. This attribute allows the driver to communicate to the database server that only <em class="cEmphasis">Z</em> bytes of data are relevant to the client. The server responds by sending only the first Z bytes of data for all result columns. This optimization substantially reduces network traffic and improves performance. Our example returned only one row, but, consider the case where 100 rows are returned in the result set&#8212;the performance improvement would be substantial.
+</p>
+<a name="wp13316"> </a><h4 class="pHeading3">
+Using Bound Columns
+</h4>
+<a name="wp13317"> </a><p class="pBody">
+Retrieving data using bound columns (SQLBindCol), instead of SQLGetData, reduces the ODBC call load and improves performance.
+</p>
+<a name="wp13318"> </a><p class="pBody">
+Consider the following example:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLExecDirect (hstmt, &#8220;SELECT &lt;20 columns&gt; <a name="wp13319"> </a>
+   FROM Employees WHERE HireDate &gt;= ?&#8221;, SQL_NTS);<a name="wp13320"> </a>
+do {<a name="wp13321"> </a>
+rc = SQLFetch (hstmt);<a name="wp13322"> </a>
+// call SQLGetData 20 times<a name="wp13323"> </a>
+} while ((rc == SQL_SUCCESS) || (rc==
+SQL_SUCCESS_WITH_INFO));<a name="wp13324"> </a>
+</pre></div>
+<a name="wp13325"> </a><p class="pBody">
+Suppose the query returns 90 result rows. More than 1890 ODBC calls are made (20 calls to SQLGetData x 90 result rows + 91 calls to SQLFetch). 
+</p>
+<a name="wp13326"> </a><p class="pBody">
+Consider the same scenario that uses SQLBindCol, instead of SQLGetData:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLExecDirect (hstmt, &#8220;SELECT &lt;20 columns&gt; <a name="wp13327"> </a>
+   FROM Employees WHERE HireDate &gt;= ?&#8221;, SQL_NTS);<a name="wp13328"> </a>
+// call SQLBindCol 20 times<a name="wp13329"> </a>
+do {<a name="wp13330"> </a>
+rc = SQLFetch (hstmt);	<a name="wp13331"> </a>
+} while ((rc == SQL_SUCCESS) || (rc==
+SQL_SUCCESS_WITH_INFO));<a name="wp13332"> </a>
+</pre></div>
+<a name="wp13333"> </a><p class="pBody">
+The number of ODBC calls made is reduced from more than 1890 to about 110 (20 calls to SQLBindCol + 91 calls to SQLFetch). In addition to reducing the call load, many ODBC drivers optimize how SQLBindCol is used by binding result information directly from the database server to the user&#8217;s buffer. That is, instead of the ODBC driver retrieving information into a container and copying that information to the user&#8217;s buffer, the ODBC driver simply requests the information from the server be placed directly into the user&#8217;s buffer.
+</p>
+<a name="wp13334"> </a><h4 class="pHeading3">
+Using SQLExtendedFetch Instead of SQLFetch
+</h4>
+<a name="wp13335"> </a><p class="pBody">
+Use SQLExtendedFetch instead of SQLFetch to retrieve data. The ODBC call load decreases, resulting in better performance, and the code becomes less complex, resulting in more easily maintainable code.
+</p>
+<a name="wp13336"> </a><p class="pBody">
+Most ODBC drivers support SQLExtendedFetch for forward only cursors; yet, most ODBC applications use SQLFetch to retrieve data. Again, consider the previous example using SQLExtendedFetch, instead of SQLFetch:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLSetStmtOption (hstmt, SQL_ROWSET_SIZE, 100);<a name="wp13337"> </a>
+// use arrays of 100 elements<a name="wp13338"> </a>
+rc = SQLExecDirect (hstmt, &#8220;SELECT &lt;20 columns&gt; <a name="wp13339"> </a>
+   FROM Employees WHERE HireDate &gt;= ?&#8221;, SQL_NTS);<a name="wp13340"> </a>
+// call SQLBindCol 1 time specifying row-wise binding<a name="wp13341"> </a>
+do {<a name="wp13342"> </a>
+rc = SQLExtendedFetch (hstmt, SQL_FETCH_NEXT, 0,<a name="wp13343"> </a>
+   &amp;RowsFetched, RowStatus);<a name="wp13344"> </a>
+} while ((rc == SQL_SUCCESS) || (rc==
+SQL_SUCCESS_WITH_INFO));<a name="wp13345"> </a>
+</pre></div>
+<a name="wp13346"> </a><p class="pBody">
+The number of ODBC calls made by the application is reduced from 110 to 4 (1 SQLSetStmtOption + 1 SQLExecDirect + 1 SQLBindCol + 1 SQLExtendedFetch). Note the total savings from an initial call load of more than 1890 ODBC calls to 4 ODBC calls. In addition to reducing the call load, many ODBC drivers retrieve data from the server in arrays, further improving performance by reducing network traffic.
+</p>
+<a name="wp13347"> </a><p class="pBody">
+For ODBC drivers that do not support SQLExtendedFetch, the application can enable forward-only cursors using the ODBC cursor library (call SQLSetConnectOption using SQL_ODBC_CURSORS/ SQL_CUR_USE_IF_NEEDED).
+</p>
+<a name="wp13348"> </a><p class="pBody">
+Although using the cursor library does not improve performance, it should not be detrimental to your application&#8217;s response time when using forward-only cursors (no logging is required). Furthermore, using the cursor library when SQLExtendedFetch is not supported natively by the ODBC driver simplifies the code, because the application can depend on SQLExtendedFetch being available. The application does not require two algorithms (one using SQLExtendedFetch and another using SQLFetch).
+</p>
+<a name="wp13350"> </a><h3 class="pHeading2">
+ODBC Function Selection
+</h3>
+<a name="wp13351"> </a><p class="pBody">
+The guidelines in this section help you to optimize system performance when selecting and using ODBC functions.
+</p>
+<a name="wp13352"> </a><h4 class="pHeading3">
+Using SQLPrepare/SQLExecute and SQLExecDirect
+</h4>
+<a name="wp13353"> </a><p class="pBody">
+Using SQLPrepare/SQLExecute is not always as efficient as using SQLExecDirect. Use SQLExecDirect for queries that will be executed once and SQLPrepare/SQLExecute for queries that will be executed multiple times.
+</p>
+<a name="wp13354"> </a><p class="pBody">
+ODBC drivers are optimized based on the perceived use of the functions that are being executed. SQLPrepare/SQLExecute is optimized for multiple executions of a statement that uses parameter markers. SQLExecDirect is optimized for a single execution of a SQL statement. Unfortunately, more than 75&#160;percent of all ODBC applications use SQLPrepare/SQLExecute exclusively.
+</p>
+<a name="wp13355"> </a><p class="pBody">
+Consider an ODBC driver that implements SQLPrepare by creating a stored procedure on the server which contains the prepared statement. Creating stored procedures has substantial overhead, but the statement will be executed multiple times. Although creating stored procedures is performance-expensive, processing is minimal because the query is parsed and optimization paths are stored when the procedure is created. 
+</p>
+<a name="wp13356"> </a><p class="pBody">
+Using SQLPrepare/SQLExecute for a statement that will be executed only once results in unnecessary overhead. Furthermore, applications that use SQLPrepare/SQLExecute for large, single-execution query batches will probably exhibit poor performance. Similarly, applications that use SQLExecDirect exclusively do not perform as well as those that use a logical combination of SQLPrepare/SQLExecute and SQLExecDirect sequences.
+</p>
+<a name="wp13357"> </a><h4 class="pHeading3">
+Using SQLPrepare and Multiple SQLExecute Calls
+</h4>
+<a name="wp13358"> </a><p class="pBody">
+Applications that use SQLPrepare and multiple SQLExecute calls should use SQLParamOptions. Passing arrays of parameter values reduces the ODBC call load and network traffic.
+</p>
+<a name="wp13359"> </a><p class="pBody">
+Consider the following example that inserts data:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLPrepare (hstmt, &#8220;INSERT INTO DailyLedger (...)<a name="wp13360"> </a>
+   VALUES (?,?,...)&#8221;, SQL_NTS);<a name="wp13361"> </a>
+// bind parameters<a name="wp13362"> </a>
+...<a name="wp13363"> </a>
+do {<a name="wp13364"> </a>
+// read ledger values into bound parameter buffers<a name="wp13365"> </a>
+...<a name="wp13366"> </a>
+rc = SQLExecute (hstmt);      // insert row<a name="wp13367"> </a>
+} while ! (eof);<a name="wp13368"> </a>
+</pre></div>
+<a name="wp13369"> </a><p class="pBody">
+If there are 100 rows to insert, SQLExecute is called 100 times, resulting in 100 network requests to the server. 
+</p>
+<a name="wp19458"> </a><p class="pBody">
+Alternatively, consider an algorithm that uses parameter arrays by calling SQLParamOptions:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLPrepare (hstmt, &#8220;INSERT INTO DailyLedger (...) <a name="wp13370"> </a>
+   VALUES (?,?,...)&#8221;, SQL_NTS);<a name="wp13371"> </a>
+rc = SQLParamOptions (hstmt, (UDWORD) 50, &amp;CurrentRow);<a name="wp13372"> </a>
+// pass 50 parameters per execute<a name="wp13373"> </a>
+// bind parameters<a name="wp13374"> </a>
+...<a name="wp13375"> </a>
+do {<a name="wp13376"> </a>
+// read up to 50 ledger values into bound parameter buffers<a name="wp13377"> </a>
+...<a name="wp13378"> </a>
+rc = SQLExecute (hstmt);      // insert row<a name="wp13379"> </a>
+</pre></div>
+<a name="wp13380"> </a><p class="pBody">
+The call load is reduced from 100 to just 2 SQLExecute calls. Furthermore, network traffic is reduced considerably. To achieve the best performance, applications should contain algorithms for using SQLParamOptions. SQLParamOptions is ideal for copying data into new tables or bulk loading tables. Note, however, that some ODBC drivers do not support SQLParamOptions. 
+</p>
+<a name="wp13381"> </a><h4 class="pHeading3">
+Using the Cursor Library
+</h4>
+<a name="wp13382"> </a><p class="pBody">
+If scrollable cursors are provided by the driver, do not use the cursor library automatically. The cursor library creates local temporary log files, which are performance-expensive to generate and provide worse performance than native scrollable cursors.
+</p>
+<a name="wp13383"> </a><p class="pBody">
+The cursor library provides support for static cursors, which simplifies the coding of applications that use scrollable cursors; however, the cursor library creates temporary log files on the user&#8217;s local disk drive as it performs the task. Typically, disk input/output is one of the slowest operations on PCs. Although the cursor library is beneficial, applications should not choose automatically to use the cursor library when an ODBC driver supports scrollable cursors natively.
+</p>
+<a name="wp13384"> </a><p class="pBody">
+Typically, ODBC drivers that support scrollable cursors achieve better performance by requesting that the database server produce a scrollable result set, instead of emulating this ability by creating log files. 
+</p>
+<a name="wp13385"> </a><p class="pBody">
+Many applications use:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLSetConnectOption (hdbc, SQL_ODBC_CURSORS,<a name="wp13386"> </a>
+   SQL_CUR_USE_ODBC);<a name="wp13387"> </a>
+</pre></div>
+<a name="wp13388"> </a><p class="pBody">
+but should use:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLSetConnectOption (hdbc, SQL_ODBC_CURSORS,<a name="wp13389"> </a>
+   SQL_CUR_USE_IF_NEEDED);<a name="wp13390"> </a>
+</pre></div>
+<a name="wp13392"> </a><h3 class="pHeading2">
+Designing ODBC Applications
+</h3>
+<a name="wp13393"> </a><p class="pBody">
+This general guidelines in this section will help you to optimize system performance when designing ODBC applications.
+</p>
+<a name="wp13394"> </a><h4 class="pHeading3">
+Managing Connections
+</h4>
+<a name="wp13395"> </a><p class="pBody">
+Connection management affects application performance. Optimize your applications by connecting once and using multiple statement handles, instead of performing multiple connections. Many ODBC applications contain poorly designed elements for connection management. Avoid connecting to a data source after establishing an initial connection. 
+</p>
+<a name="wp13396"> </a><p class="pBody">
+Some ODBC applications are designed to call informational gathering routines that have no record of attached connection handles. For example, some applications establish a connection and call a routine in a separate DLL or shared library that reattaches and gathers information about the driver. 
+</p>
+<a name="wp13397"> </a><p class="pBody">
+Although gathering ODBC driver information at connection is a good practice, it often is more efficient to gather it in one-step rather than two steps. One popular commercial ODBC application connects a second time to gather driver information, and <span style="font-style: italic">never</span> disconnects the second connection. Applications that are designed as separate entities should pass the connected HDBC pointer to the data collection routine, instead of establishing a second connection.
+</p>
+<a name="wp13398"> </a><p class="pBody">
+Another bad practice is to connect and disconnect several times throughout your application to perform SQL statements. Connection handles can have multiple statement handles associated with them. Statement handles can provide memory storage for information about SQL statements; therefore applications do not need to allocate new connection handles to perform SQL statements. Applications should use <em class="cEmphasis">statement</em> <em class="cEmphasis">handles</em> to manage multiple SQL statements.
+</p>
+<a name="wp13399"> </a><p class="pBody">
+In Windows, significant performance improvement can be achieved with connection pooling, especially for applications that connect over a network or through the World Wide Web. Connection pooling lets you reuse connections. Closing connections does not close the physical connection to the database. When an application requests a connection, an active connection is reused, thus avoiding the network input/output needed to create a new connection.
+</p>
+<a name="wp21039"> </a><p class="pBody">
+Connection and statement handling should be addressed before implementation. Spending time and thoughtfully handling connection management improves application performance and maintainability.
+</p>
+<a name="wp13400"> </a><h4 class="pHeading3">
+Managing Transactions
+</h4>
+<a name="wp13401"> </a><p class="pBody">
+Committing data is extremely disk input/output intensive and slow. If the ODBC driver can support transactions, turn Autocommit off. 
+</p>
+<a name="wp13402"> </a><p class="pBody">
+What does a commit involve? The database server must flush back to disk every data page containing updated or new data. This is not a sequential write, but a searched write to replace existing data in the table. By default, Autocommit is on when connecting to a data source, and Autocommit mode usually impairs performance because of the significant amount of disk input/output required to commit every operation. 
+</p>
+<a name="wp13403"> </a><p class="pBody">
+Furthermore, some database servers do not provide an Autocommit mode. For this server type, the ODBC driver must explicitly issue a COMMIT statement and a BEGIN TRANSACTION for every operation sent to the server. In addition to the large amount of disk input/output required to support Autocommit mode, a performance penalty is paid for up to three network requests for every statement issued by an application.
+</p>
+<a name="wp13405"> </a><h3 class="pHeading2">
+Updating Data
+</h3>
+<a name="wp13406"> </a><p class="pBody">
+This section provides general guidelines for updating data in databases that will help optimize system performance.
+</p>
+<a name="wp13407"> </a><h4 class="pHeading3">
+Using Positional Updates and Deletes
+</h4>
+<a name="wp13408"> </a><p class="pBody">
+Use positional updates and deletes or SQLSetPos to update data.
+</p>
+<a name="wp21038"> </a><p class="pBody">
+Although positional updates do not apply to all types of applications, developers should attempt to use positional updates and deletes when it makes sense. Positional updates (using &#8220;update where current of cursor&#8221; or using SQLSetPos) allow the developer to signal the ODBC driver to &#8220;change the data here&#8221; by positioning the database cursor to the appropriate row to be changed. The developer is not forced to build a complex SQL statement and simply supplies the data that will be changed.
+</p>
+<a name="wp13409"> </a><p class="pBody">
+In addition to making the application more easily maintainable, positional updates usually result in improved performance. Because the database server is already positioned on the row for the Select statement in process, performance-expensive operations to locate the row to be changed are not needed. If the row must be located, the server usually has an internal pointer to the row available (for example, ROWID). 
+</p>
+<a name="wp13410"> </a><h4 class="pHeading3">
+Using SQLSpecialColumns
+</h4>
+<a name="wp13411"> </a><p class="pBody">
+Use SQLSpecialColumns to determine the optimal set of columns to use in the Where clause for updating data. Often, pseudo-columns provide the fastest access to the data, and these columns can only be determined by using SQLSpecialColumns.
+</p>
+<a name="wp13412"> </a><p class="pBody">
+Some applications cannot be designed to take advantage of positional updates and deletes. These applications usually update data by using a Where clause consisting of some subset of the column values returned in the result set. Some applications may formulate the Where clause by using all searchable result columns or by calling SQLStatistics to find columns that may be part of a unique index. These methods usually work, but may result in fairly complex queries.
+</p>
+<a name="wp13413"> </a><p class="pBody">
+Consider the following:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+rc = SQLExecDirect (hstmt, &#8220;SELECT first_name, last_name,<a name="wp13414"> </a>
+   ssn, address, city, state, zip FROM emp&#8221;, SQL_NTS);<a name="wp13415"> </a>
+// fetchdata<a name="wp13416"> </a>
+...<a name="wp13417"> </a>
+rc = SQLExecDirect (hstmt, &#8220;UPDATE EMP SET ADDRESS = ?<a name="wp13418"> </a>
+   WHERE first_name = ? and last_name = ? and ssn = ?<a name="wp13419"> </a>
+   and address = ? and city = ? and state = ? and zip = ?&#8221;,<a name="wp13420"> </a>
+   SQL_NTS);<a name="wp13421"> </a>
+// fairly complex query<a name="wp13422"> </a>
+</pre></div>
+<a name="wp13423"> </a><p class="pBody">
+Applications should call SQLSpecialColumns/SQL_BEST_ROWID to retrieve the optimal set of columns (possibly a pseudo-column) that identifies a specific record. Many databases support special columns that are not explicitly defined by the user in the table definition but are &#8220;hidden&#8221; columns of every table (for example, ROWID and TID). These pseudo-columns usually provide the fastest access to the data, because they usually point to the exact location of the record. Because pseudo-columns are not part of the explicit table definition, they are not returned from SQLColumns. To determine if pseudo-columns exist, call SQLSpecialColumns.
+</p>
+<a name="wp13424"> </a><p class="pBody">
+Consider the previous example again:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+...<a name="wp13425"> </a>
+rc = SQLSpecialColumns (hstmt, ..... &#8216;emp&#8217;, ...);<a name="wp13426"> </a>
+...<a name="wp13427"> </a>
+rc = SQLExecDirect (hstmt, &#8220;SELECT first_name, last_name,<a name="wp13428"> </a>
+   ssn, address, city, state, zip, ROWID FROM emp&#8221;,<a name="wp13429"> </a>
+   SQL_NTS);<a name="wp13430"> </a>
+// fetch data and probably &#8220;hide&#8221; ROWID from the user<a name="wp13431"> </a>
+...<a name="wp13432"> </a>
+rc = SQLExecDirect (hstmt, &#8220;UPDATE emp SET address = ?<a name="wp13433"> </a>
+   WHERE ROWID = ?&#8221;, SQL_NTS);<a name="wp13434"> </a>
+// fastest access to the data!<a name="wp13435"> </a>
+</pre></div>
+<a name="wp13436"> </a><p class="pBody">
+If your data source does not contain special pseudo-columns, the result set of SQLSpecialColumns consists of the columns of the optimal unique index on the specified table (if a unique index exists); therefore, your application does not need to call SQLStatistics to find the smallest unique index.
+</p>
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.writeln(WWHRelatedTopicsInlineHTML());
+   // -->
+  </script>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function  WWHDefineRelatedTopics(ParamRelatedTopics)
+    {
+      ParamRelatedTopics.fAdd("Using Scrollable Cursors", "devref", "devodbc8.html#wp14576");
+      ParamRelatedTopics.fAdd("", "", "");
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

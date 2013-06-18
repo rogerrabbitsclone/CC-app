@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:49:55" />
+  <title>ODBC SequeLink Driver Setup Dialog Box</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp1028525"> </a><h1 class="pNewHTMLPageNoNum">
+ODBC SequeLink Driver Setup Dialog Box
+</h1>
+<hr /><a name="wp1028526"> </a><p class="pBody">
+Use the ODBC SequeLink Driver Setup dialog box to configure ODBC User and System data sources (see <a  href="useodbc4.html#wp997337">&quot;Configuring ODBC User and System Client Data Sources&quot;</a>).
+</p>
+<a name="wp1028530"> </a><p class="pBody">
+Provide the following information; then, click <b class="cBold">OK</b>.
+</p>
+<a name="wp1026918"> </a><p class="pBodyIndent12pxBeforeAfter">
+Data Source Name: Type a unique name that identifies this ODBC data source configuration. Examples are &#8220;Accounting&#8221; or &#8220;SequeLink to Oracle Data&#8221;. 
+</p>
+<a name="wp1026919"> </a><p class="pBodyIndent12pxBeforeAfter">
+Description: Optionally, type a description of the data source, for example, &#8220;My Accounting Database&#8221; or &#8220;Accounting Data in Oracle&#8221;.
+</p>
+<a name="wp1026920"> </a><p class="pBodyIndent12pxBeforeAfter">
+SequeLink Server Host: Type the TCP/IP host name of the SequeLink service to which the ODBC Client will connect.
+</p>
+<a name="wp1026921"> </a><p class="pBodyIndent12pxBeforeAfter">
+SequeLink Server Port: Type the TCP/IP port the SequeLink service is listening on for connection requests. The port you specify must be the same port that was specified for the SequeLink service when the SequeLink Server was installed; the initial default value is 19996.
+</p>
+<a name="wp1026922"> </a><p class="pBodyIndent12pxBeforeAfter">
+Server Data Source: Type the name of a server data source configured for the SequeLink service to use for the connection, or click the <b class="cBold">...</b> button to select an existing server data source. This field is optional. If a server data source is not specified, the default server data source for that SequeLink service is used.
+</p>
+<a name="wp1026927"> </a><p class="pBodyIndent12pxBeforeAfter">
+Translate: Click <span style="font-weight: bold">Translate</span> only if you want to configure an ODBC translator. 
+</p>
+<a name="wp1026928"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE: We strongly recommend that you do not configure an ODBC translator and rely on the native SequeLink transliteration between server and client code pages.
+</p>
+<a name="wp1026929"> </a><p class="pBodyIndent12pxBeforeAfter">
+The Select Translator dialog box appears, listing translators specified in the ODBC Translators section of the system information. Select a translator. When satisfied with your choice, click <span style="font-weight: bold">OK</span> to close this dialog box and perform the translation.
+</p>
+<a name="wp1026931"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE FOR LDAP USERS: To configure the ODBC Client to retrieve connection information from an LDAP directory, select the <b class="cBold">Use LDAP</b> check box. The fields change on the lower half of the screen to accommodate the information required to query an LDAP server for connection information. Provide the following information:
+</p>
+<a name="wp1026932"> </a><p class="pBodyIndent12pxBeforeAfter">
+LDAP Server Host: Type the TCP/IP host name of the LDAP server.
+</p>
+<a name="wp1026933"> </a><p class="pBodyIndent12pxBeforeAfter">
+LDAP Server Port: Type the TCP/IP port the LDAP server is listening on for connection requests. If unspecified, the ODBC Client will use the default LDAP port&#160;389.
+</p>
+<a name="wp1026934"> </a><p class="pBodyIndent12pxBeforeAfter">
+Distinguished Name (DN): Type an identifier that uniquely identifies the LDAP entry where the connection information is stored.
+</p>
+<a name="wp1028566"> </a><p class="pBody">
+ 
+</p>
+<a name="wp1028567"> </a><p class="pBody">
+<b class="cBold">Test Connect Button</b>: Click this button to test the connection. If successful, a dialog box appears telling you the connection was successful. 
+</p>
+<a name="wp1023106"> </a><p class="pBodyIndent12pxBeforeAfter">
+
+</p>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

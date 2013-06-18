@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:50:04" />
+  <title>Using Stored Procedures with Oracle</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp12923"> </a><h1 class="pNewHTMLPageNoNum">
+Using Stored Procedures with Oracle
+</h1>
+<hr /><a name="wp12924"> </a><p class="pBody">
+SequeLink supports stored procedures against Oracle, including stored procedures in packages. 
+</p>
+<a name="wp15029"> </a><p class="pBody">
+NOTE: Stored procedures in packages must be qualified with the package name, for example, EmployeePackage.EmployeeProc. 
+</p>
+<a name="wp15031"> </a><p class="pBody">
+Also, SQLProcedures and SQLProcedureColumns can return information on procedures within PL/SQL packages, allowing ODBC applications to execute these procedures. This section contains an example that shows you how to fetch rows using Oracle PL/SQL procedures.
+</p>
+<a name="wp12925"> </a><p class="pBodyBold">
+Example - Part 1
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+Create or replace package EmployeeInfo as<a name="wp12926"> </a>
+   Type EmployeeRec is record<a name="wp12927"> </a>
+   (<a name="wp12928"> </a>
+   Employee_Id     integer,<a name="wp12929"> </a>
+   Employee_Name   varchar2(25),<a name="wp12930"> </a>
+   Employee_Job    varchar2(25),<a name="wp12931"> </a>
+   Department_Name varchar2(30),<a name="wp12932"> </a>
+   Employee_Salary integer<a name="wp12933"> </a>
+   );<a name="wp12934"> </a>
+   Type EmployeeCursor is ref cursor return <a name="wp12935"> </a>
+   EmployeeRec;<a name="wp12936"> </a>
+   End EmployeeInfo;<a name="wp12937"> </a>
+   <a name="wp12938"> </a>
+   Create or replace procedure EmployeeInfoProc<a name="wp12939"> </a>
+   (empname IN varchar2, empcursor IN OUT <a name="wp12940"> </a>
+   EmployeeInfo.EmployeeCursor)<a name="wp12941"> </a>
+   As<a name="wp12942"> </a>
+   Begin<a name="wp12943"> </a>
+   Open empcursor For<a name="wp12944"> </a>
+   select empno, ename, job, dname, sal <a name="wp12945"> </a>
+   from emp, dept<a name="wp12946"> </a>
+   where emp.deptno=dept.deptno and <a name="wp12947"> </a>
+   ename like empname;<a name="wp12948"> </a>
+   End;<a name="wp12949"> </a>
+</pre></div>
+<a name="wp12950"> </a><p class="pBody">
+NOTE: In this Oracle PL/SQL package, a record type and a cursor (result set) type is defined. The procedure contains an input parameter that can have a value, such as <code class="cCode">Smi%</code>, to request information about employees whose last name starts with the letters &#39;Smi&#39; (for example, Smith or Smithwick). The procedure also has one input/output parameter of the cursor type defined in the package.
+</p>
+<a name="wp12951"> </a><p class="pBodyBold">
+Example - Part 2
+</p>
+<a name="wp12952"> </a><p class="pBody">
+This example shows an ODBC function call sequence executing the stored procedure.
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+SQLPrepare(...,&#39;{call EmployeeInfoProc(?)}&#39;,...) <a name="wp12953"> </a>
+                         &lt;- ODBC SQL syntax to executed stored procedures<a name="wp12954"> </a>
+SQLBindParameter(...,&#39;Smi%&#39;,...) <a name="wp12955"> </a>
+                         &lt;- Define the input variable for the input marker ?<a name="wp12956"> </a>
+                            in the SQL stmt and assign the value &#39;Smi% to it<a name="wp12957"> </a>
+SQLExecute()             &lt;- Execute the stored procedure<a name="wp12958"> </a>
+SQLBindCol()             &lt;- Assign storage for result column 1 in the <a name="wp12959"> </a>
+                            result set (Employee_Id)<a name="wp12960"> </a>
+SQLBindCol()             &lt;- Assign storage for result column 2 in the <a name="wp12961"> </a>
+                            result set (Employee_Name)<a name="wp12962"> </a>
+SQLBindCol()             &lt;- Assign storage for result column 3 in the <a name="wp12963"> </a>
+                            result set (Employee_Job)<a name="wp12964"> </a>
+SQLBindCol()             &lt;- Assign storage for result column 4 in the <a name="wp12965"> </a>
+                            result set (Department_Name)<a name="wp12966"> </a>
+SQLBindCol()             &lt;- Assign storage for result column 5 in the <a name="wp12967"> </a>
+                            result set (Employee_Salary)<a name="wp12968"> </a>
+SQLFetch()               &lt;- Fetch the first record from the result set <a name="wp12969"> </a>
+                            generated by the stored procedure.<a name="wp12970"> </a>
+</pre></div>
+<a name="wp12971"> </a><p class="pBody">
+IMPORTANT: From the following procedure definition, you might think that, by having two parameters, the procedure must call SQLBindParameter twice:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+Create or replace procedure EmployeeInfoProc<a name="wp12972"> </a>
+(empname IN varchar2, empcursor IN OUT 
+EmployeeInfo.EmployeeCursor)<a name="wp12973"> </a>
+</pre></div>
+<a name="wp12974"> </a><p class="pBody">
+Actually, it does not. The only way to create a result set from an Oracle stored procedure is to declare this result set, empcursor, as an input/output parameter. This can be seen in the result of <code class="cCode">SQLProcedureColumns(...,&#39;EmployeeInfoProc&#39;,...)</code> which an application can use to query the server about a stored procedure. 
+</p>
+<a name="wp12975"> </a><p class="pBody">
+The following is an excerpt of a session using the tool ODBCTest:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+SQLAllocStmt:<a name="wp12976"> </a>
+   In: hdbc=0x004609F0, phstmt=VALID<a name="wp12977"> </a>
+   Return:    SQL_SUCCESS=0<a name="wp12978"> </a>
+<a name="wp12979"> </a>
+   SQLPrepare:<a name="wp12980"> </a>
+   In: hstmt=#3 0x00305850, szSqlStr={call EmployeeInfoProc(?)}, cbSqlStr=26<a name="wp12981"> </a>
+   Return:    SQL_SUCCESS=0<a name="wp12983"> </a>
+<a name="wp12984"> </a>
+   SQLBindParameter:<a name="wp12985"> </a>
+   In: hstmt=#3 0x00305850, ipar=1, fParamType=SQL_PARAM_INPUT=1, <a name="wp12986"> </a>
+   fCType=SQL_C_CHAR=1,<a name="wp12987"> </a>
+   fSqlType=SQL_CHAR=1, cbColDef=10, ibScale=0, rgbValue=VALID, <a name="wp12988"> </a>
+   cbValueMax=300, pcbValue=VALID, SQL_LEN_DATA_AT_EXEC=FALSE<a name="wp12989"> </a>
+   Return:    SQL_SUCCESS=0<a name="wp12990"> </a>
+<a name="wp12991"> </a>
+   SQLExecute:<a name="wp12992"> </a>
+   In: hstmt=#3 0x00305850<a name="wp12993"> </a>
+   Return:    SQL_SUCCESS=0<a name="wp12994"> </a>
+<a name="wp12995"> </a>
+   Get Data All:<a name="wp12996"> </a>
+   &quot;EMPNO&quot;, &quot;ENAME&quot;, &quot;JOB&quot;, &quot;DNAME&quot;, &quot;SAL&quot;<a name="wp12997"> </a>
+   7934, &quot;MILLER&quot;, &quot;CLERK&quot;, &quot;ACCOUNTING&quot;, 1300.00 <a name="wp12998"> </a>
+   7654, &quot;MARTIN&quot;, &quot;SALESMAN&quot;, &quot;SALES&quot;, 1250.00<a name="wp12999"> </a>
+   2 rows fetched from 5 columns.<a name="wp13000"> </a>
+<a name="wp13001"> </a>
+   SQLProcedureColumns:<a name="wp13002"> </a>
+   In: hstmt=#4 0x00305BD8, ...Qualifier=NULL, ...Qualifier=0, <a name="wp13003"> </a>
+   Owner=SCOTT, ...Owner=5, ...Name=EMPLOYEEINFOPROC,<a name="wp13004"> </a>
+   ...Name=16, ...Name=NULL, ...Name=0<a name="wp13005"> </a>
+   Return:    SQL_SUCCESS=0<a name="wp13006"> </a>
+<a name="wp13007"> </a>
+   Get Data All:<a name="wp13008"> </a>
+   &quot;PROCEDURE_CAT&quot;, &quot;PROCEDURE_SCHEM&quot;, &quot;PROCEDURE_NAME&quot;, &quot;COLUMN_NAME&quot;,<a name="wp13009"> </a>
+   &quot;COLUMN_TYPE&quot;, &quot;DATA_TYPE&quot;, ...&quot;TYPE_NAME&quot;, &quot;COLUMN_SIZE&quot;,<a name="wp15331"> </a>
+   &quot;BUFFER_LENGTH&quot;, &quot;DECIMAL_DIGITS&quot;, &quot;NUM_PREC_RADIX&quot;, &quot;NULLABLE&quot;,<a name="wp15332"> </a>
+   &quot;REMARKS&quot;, &quot;COLUMN_DEF&quot;, &quot;SQL_DATA_TYPE&quot;, &quot;SQL_DATETIME_SUB&quot;,<a name="wp15335"> </a>
+   &quot;CHAR_OCTET_LENGTH&quot;, &quot;ORDINAL_POSITION&quot;, &quot;IS_NULLABLE&quot;<a name="wp15338"> </a>
+   &quot;&quot;, &quot;SCOTT&quot;, &quot;EMPLOYEEINFOPROC&quot;, &quot;EMPNAME&quot;, 1, 12, &quot;VARCHAR2&quot;, 2000, <a name="wp15322"> </a>
+   2000, &lt;Null&gt;, &lt;Null&gt;, 1, &lt;Null&gt;, &lt;Null&gt;, ...12, &lt;Null&gt;, 2000, 1, &quot;YES&quot;<a name="wp13016"> </a>
+</pre></div>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

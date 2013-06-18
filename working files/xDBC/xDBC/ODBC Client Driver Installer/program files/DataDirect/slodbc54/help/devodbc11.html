@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:50:04" />
+  <title>Persisting a Result Set as an XML Data File</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp24757"> </a><h1 class="pNewHTMLPageNoNum">
+Persisting a Result Set as an XML Data File
+</h1>
+<hr /><a name="wp50646"> </a><p class="pBody">
+The ODBC driver allows you to persist a result set as an XML data file with embedded schema. To implement XML persistence, a client application must do the following:
+</p>
+<div class="pSmartList1"><ol type="1" class="pSmartList1">
+<a name="wp50647"> </a><div class="pSmartList1"><li>Turn on STATIC cursors. For example:</li></div><a name="wp50648"> </a><p class="pSyntaxEmbed">
+SQLSetStmtAttr (hstmt, SQL_ATTR_CURSOR_TYPE, SQL_CURSOR_STATIC, SQL_IS_INTEGER)
+</p>
+<a name="wp50649"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE: A result set can be persisted as an XML data file only if the result set is generated using STATIC cursors. Otherwise, the following error is returned:
+</p>
+<a name="wp50650"> </a><p class="pSyntaxEmbed">
+Driver only supports XML persistence when using driver&#8217;s static cursors.
+</p>
+<a name="wp50651"> </a><div class="pSmartList1"><li>Execute a SQL statement. For example:</li></div><a name="wp50652"> </a><p class="pSyntaxEmbed">
+SQLExecDirect (hstmt, &quot;Select * from GTABLE&quot;, SQL_NTS)
+</p>
+<a name="wp50653"> </a><div class="pSmartList1"><li>Persist the result set as an XML data file. For example:</li></div><a name="wp50654"> </a><p class="pSyntaxEmbed">
+SQLSetStmtAttr (hstmt, SQL_PERSIST_AS_XML, &quot;c:\temp\GTABLE.XML&quot;, SQL_NTS)
+</p>
+<a name="wp50655"> </a><p class="pBodyIndent12pxBeforeAfter">
+NOTE: A new statement attribute is available to support XML persistence, SQL_PERSIST_AS_XML. A client application must call SQLSetStmtAttr with this new attribute as an argument. See the following table for the definition of valid arguments for SQLSetStmtAttr:
+</p>
+</ol></div>
+<a name="wp50677"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption></caption>
+  <tr align="center">    <th><a name="wp50658"> </a><div class="pCellHeading">
+Argument
+</div>
+</th>
+    <th><a name="wp50660"> </a><div class="pCellHeading">
+Definition
+</div>
+</th>
+</tr>
+  <tr align="left">    <td><a name="wp50662"> </a><div class="pCellBody">
+StatementHandle
+</div>
+</td>
+    <td><a name="wp50664"> </a><div class="pCellBody">
+The handle of the statement that contains the result set to persist as XML.
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp50666"> </a><div class="pCellBody">
+Attribute
+</div>
+</td>
+    <td><a name="wp50668"> </a><div class="pCellBody">
+SQL_PERSIST_AS_XML. This new statement attribute can be found in the file qesqlext.h, which is installed with the driver.
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp50670"> </a><div class="pCellBody">
+ValuePtr
+</div>
+</td>
+    <td><a name="wp50672"> </a><div class="pCellBody">
+Pointer to a URL that specifies the full path name of the XML data file to be generated. The directory specified in the path name must exist, and if the specified file name exists, the file will be overwritten.
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp50674"> </a><div class="pCellBody">
+StringLength
+</div>
+</td>
+    <td><a name="wp50676"> </a><div class="pCellBody">
+The length of the string pointed to by ValuePtr or SQL_NTS if ValuePtr points to a null terminated string.
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp50678"> </a><p class="pBody">
+A client application can choose to persist the data at any time that the statement is in an executed or cursor-positioned state. At any other time, the driver returns the following message:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+Function Sequence Error<a name="wp50679"> </a>
+</pre></div>
+<a name="wp44674"> </a><p class="pBody">
+ 
+</p>
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.writeln(WWHRelatedTopicsInlineHTML());
+   // -->
+  </script>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function  WWHDefineRelatedTopics(ParamRelatedTopics)
+    {
+      ParamRelatedTopics.fAdd("Using Scrollable Cursors", "devref", "devodbc8.html#wp14576");
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

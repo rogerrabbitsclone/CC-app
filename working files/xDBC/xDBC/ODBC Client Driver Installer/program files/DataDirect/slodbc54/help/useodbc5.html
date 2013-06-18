@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:49:55" />
+  <title>Configuring ODBC Client Data Sources on&#160;UNIX</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp1009705"> </a><h1 class="pNewHTMLPageNoNum">
+Configuring ODBC Client Data Sources on&#160;UNIX
+</h1>
+<hr /><a name="wp1009715"> </a><p class="pBody">
+For UNIX, an ODBC Administrator does not exist. This section describes how to configure the system information file and how to set some required environment variables to use the ODBC Client on UNIX.
+</p>
+<a name="wp531342"> </a><h3 class="pHeading2">
+Configuring the System Information File
+</h3>
+<a name="wp533713"> </a><p class="pBody">
+To configure an ODBC data source for UNIX, you must edit the odbc.ini file (32-bit driver) or odbc64.ini file (64-bit driver) using the attributes in <a  href="useodbc7.html#wp532532">Table&#160;1-1</a>. 
+</p>
+<a name="wp531203"> </a><h3 class="pHeading2">
+Example: odbc.ini for Solaris
+</h3>
+<a name="wp1026531"> </a><p class="pBody">
+The following code shows an example of an odbc.ini file for a 32-bit ODBC Client installed on a Solaris machine:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+[ODBC Data Sources]<a name="wp1026533"> </a>
+SALESDB=DataDirect 32-BIT SequeLink 5.4<a name="wp1026534"> </a>
+<a name="wp1026535"> </a>
+[SALESDB]<a name="wp1026536"> </a>
+Driver=SALES/lib/ivslk19.so<a name="wp1026537"> </a>
+Description=DataDirect 32-BIT SequeLink 5.4<a name="wp1026538"> </a>
+Host=<a name="wp1026539"> </a>
+Port=<a name="wp1026540"> </a>
+UseLDAP=0<a name="wp1026541"> </a>
+DistinguishedName=<a name="wp1026542"> </a>
+<a name="wp1026543"> </a>
+[ODBC]<a name="wp1026544"> </a>
+Trace=0<a name="wp1026545"> </a>
+TraceFile=odbctrace.out<a name="wp1026546"> </a>
+TraceDll=<code><em>path_of_installdir</em></code>/lib/odbctrac.so<a name="wp1026547"> </a>
+InstallDir=<code><em>path_of_installdir</em></code><a name="wp1026548"> </a>
+</pre></div>
+<a name="wp1026549"> </a><p class="pBody">
+where <code><em>path_of_installdir</em></code> is the path to the ODBC Client installation directory.
+</p>
+<a name="wp1026551"> </a><h3 class="pHeading2">
+Example: odbc64.ini for Solaris
+</h3>
+<a name="wp1026552"> </a><p class="pBody">
+The following code shows an example of the odbc64.ini file for a 64-bit ODBC Client installed on a Solaris machine:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+[ODBC Data Sources]<a name="wp1026553"> </a>
+SALESDB=DataDirect 64-BIT SequeLink 5.4<a name="wp1026554"> </a>
+<a name="wp1026555"> </a>
+[AccountingDB]<a name="wp1026556"> </a>
+Driver=Accounting/lib64/ivslk19.so<a name="wp1026557"> </a>
+Description=DataDirect 64-BIT SequeLink 5.4<a name="wp1026558"> </a>
+Host=<a name="wp1026559"> </a>
+Port=<a name="wp1026560"> </a>
+UseLDAP=0<a name="wp1026561"> </a>
+DistinguishedName=<a name="wp1026562"> </a>
+<a name="wp1026563"> </a>
+[ODBC]<a name="wp1026564"> </a>
+Trace=0<a name="wp1026565"> </a>
+TraceFile=odbctrace.out<a name="wp1026566"> </a>
+TraceDll=<code><em>path_of_installdir</em></code>/lib64/odbctrac.so<a name="wp1026567"> </a>
+InstallDir=<code><em>path_of_installdir</em></code><a name="wp1026568"> </a>
+</pre></div>
+<a name="wp1026569"> </a><p class="pBody">
+where <code><em>path_of_installdir</em></code> is the path to the ODBC Client installation directory.
+</p>
+<a name="wp547054"> </a><p class="pBody">
+ 
+</p>
+<a name="wp527183"> </a><h3 class="pHeading2">
+Setting Environment Variables
+</h3>
+<a name="wp1026630"> </a><p class="pBody">
+You must set several environment variables for the ODBC Client on UNIX by executing a shell script located in the installation directory. 
+</p>
+<a name="wp1026631"> </a><p class="pBodyBold">
+To execute the shell script:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp1026632"> </a><div class="pSmartList1"><li>If you are using the Bourne or Korn shell, type:</li></div><div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp1026633"> </a><div class="pSmartList2"><li><code class="cCode">. .sqlnk.sh</code> (for 32-bit client)</li></div>
+<a name="wp1026634"> </a><div class="pSmartList2"><li><code class="cCode">. .sqlnk64.sh</code> (for 64-bit client)</li></div>
+</ul></div>
+<a name="wp1026635"> </a><div class="pSmartList1"><li>If you are using the C shell, type:</li></div><div class="pSmartList2"><ul class="pSmartList2">
+<a name="wp1026636"> </a><div class="pSmartList2"><li><code class="cCode">source .sqlnk.csh</code>  (for 32-bit client)</li></div>
+<a name="wp1026637"> </a><div class="pSmartList2"><li><code class="cCode">source .sqlnk64.csh</code>  (for 64-bit client)</li></div>
+</ul></div>
+</ul></div>
+<a name="wp1026638"> </a><p class="pBody">
+Executing this shell script sets the following environment variables:</p><div align="left">
+<table border="1">
+  <caption></caption>
+  <tr align="left">    <td><a name="wp1026641"> </a><div class="pCellBody">
+ODBCINI
+</div>
+</td>
+    <td><a name="wp1026643"> </a><div class="pCellBody">
+Specifies where the centralized odbc.ini or odbc64.ini file is located.
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp1026645"> </a><div class="pCellBody">
+SQLNK_ODBC_HOME
+</div>
+</td>
+    <td><a name="wp1026647"> </a><div class="pCellBody">
+Specifies the full path of the directory containing the ODBC Client shared libraries.
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp1026648"> </a><p class="pBody">
+Executing this shell script also sets the appropriate library search environment variable (LD_LIBRARY_PATH on Solaris and Linux, SHLIB_PATH on HP-UX, or LIBPATH on AIX).
+</p>
+<a name="wp1025863"> </a><p class="pBody">
+ 
+</p>
+<a name="wp1025868"> </a><h3 class="pHeading2">
+Using a Centralized System Information File
+</h3>
+<a name="wp1026709"> </a><p class="pBody">
+Because UNIX is a multi-user environment, you may want to use a single centralized odbc.ini or odbc64.ini file controlled by a system administrator. To do this, set the ODBCINI environment variable to point to the fully qualified pathname of the centralized file.
+</p>
+<a name="wp1026710"> </a><p class="pBodyBold">
+For example:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp1026711"> </a><div class="pSmartList1"><li>In the Bourne or Korn shell, type:</li></div><a name="wp1026712"> </a><p class="pSyntaxEmbed">
+ODBCINI=/opt/odbc/system_odbc.ini;export ODBCINI
+</p>
+<a name="wp1026713"> </a><div class="pSmartList1"><li>In the C shell, type:</li></div><a name="wp1026714"> </a><p class="pSyntaxEmbed">
+setenv ODBCINI /opt/odbc/system_odbc.ini
+</p>
+</ul></div>
+<a name="wp1026715"> </a><p class="pBody">
+The odbc.ini and odbc64.ini files also require a [ODBC] section that includes the InstallDir keyword. The value of the InstallDir keyword must be the path to the directory that contains the /lib and&#160;/messages directories. 
+</p>
+<a name="wp1026716"> </a><p class="pBody">
+For example, if you choose the default installation directory for the 32-bit driver, the following line must be in the [ODBC] section of the odbc.ini file:
+</p>
+<div class="pPreformatted"><pre class="pPreformatted">
+InstallDir=<code class="cCode">/usr/slodbc54</code><a name="wp1026717"> </a>
+</pre></div>
+<a name="wp546792"> </a><p class="pBody">
+ 
+</p>
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.writeln(WWHRelatedTopicsInlineHTML());
+   // -->
+  </script>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function  WWHDefineRelatedTopics(ParamRelatedTopics)
+    {
+      ParamRelatedTopics.fAdd("Configuring ODBC Client Data Sources on&#160;Windows", "devref", "useodbc4.html#wp526977");
+      ParamRelatedTopics.fAdd("UNIX Compiler Requirements", "devref", "devodbc3.html#wp11597");
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

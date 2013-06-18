@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 13:50:04" />
+  <title>Specifying Application IDs</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp43983"> </a><h1 class="pNewHTMLPageNoNum">
+Specifying Application IDs
+</h1>
+<hr /><a name="wp46652"> </a><p class="pBody">
+<em class="cEmphasis">Application IDs</em> are alphanumeric strings passed by a SequeLink Client that identify the client application to a SequeLink service that has been configured to accept connections only from specific application IDs.
+</p>
+<a name="wp13021"> </a><p class="pBody">
+For more information about configuring SequeLink services to accept connections only from specific application IDs, refer to the <em class="cEmphasis">SequeLink Administrator&#8217;s Guide</em>.
+</p>
+<a name="wp17563"> </a><h3 class="pHeading2">
+Specifying Application IDs Explicitly
+</h3>
+<a name="wp50078"> </a><p class="pBody">
+ODBC client applications can identify themselves explicity to the SequeLink service in any of the following ways:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp50079"> </a><div class="pSmartList1"><li><b class="cBold">Specifying the application ID in the ODBC connection string that is passed to SQLDriverConnect</b>. For example:</li></div><a name="wp50080"> </a><p class="pSyntaxEmbed">
+....;APPID=<span style="font-style: italic">MyAppID</span>;
+</p>
+<a name="wp50081"> </a><p class="pBodyIndent12pxBeforeAfter">
+or
+</p>
+<a name="wp50082"> </a><p class="pSyntaxEmbed">
+....;ApplicationID=<code><em>MyAppID</em></code>;
+</p>
+<a name="wp50083"> </a><p class="pBodyIndent12pxBeforeAfter">
+where <code><em>MyAppID</em></code> is the application ID.
+</p>
+<a name="wp50084"> </a><div class="pSmartList1"><li><b class="cBold">Specifying the application ID using SQLSetConnectAttr</b>. Immediately after each call to SQLConnect or SQLDriverConnect connecting to the ODBC Client, call SQLSetConnectAttr as shown:</li></div><a name="wp50085"> </a><p class="pSyntaxEmbed">
+SQLSetConnectAttr(hdbc, 1053, &quot;<code><em>myAppId</em></code>&quot;, SQL_NTS)
+</p>
+<a name="wp50086"> </a><p class="pBodyIndent12pxBeforeAfter">
+where <code><em>myAppId</em></code> is the application ID.
+</p>
+<a name="wp50087"> </a><p class="pBodyIndent12pxBeforeAfter">
+The SQLSetConnectAttr is defined in sql.h. If an incorrect application ID is specified, the SQLSetConnectAttr fails and all subsequent SQL statements fail.
+</p>
+</ul></div>
+<a name="wp22159"> </a><p class="pBody">
+ 
+</p>
+<a name="wp13037"> </a><h3 class="pHeading2">
+Generating Application IDs Automatically
+</h3>
+<a name="wp50103"> </a><p class="pBody">
+ODBC client applications can turn on automatic application ID generation in any of the following ways:
+</p>
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp50104"> </a><div class="pSmartList1"><li><b class="cBold">Specifying the automatic application ID method in the ODBC connection string that is passed to SQLDriverConnect</b>. For example:</li></div><a name="wp50105"> </a><p class="pSyntaxEmbed">
+....;AutomaticApplicationID=<code><em>x</em></code>;
+</p>
+<a name="wp50106"> </a><p class="pBodyIndent12pxBeforeAfter">
+where <code><em>x</em></code> is either 1, 2, or 3.
+</p>
+<a name="wp50108"> </a><div class="pSmartList1"><li><b class="cBold">Specifying SQLSetConnectAttr</b>. Immediately after each call to SQLConnect or SQLDriverConnect connecting to the ODBC Client, call SQLSetConnectAttr as shown:</li></div><a name="wp50109"> </a><p class="pSyntaxEmbed">
+SQLSetConnectAttr(hdbc, 1054, <code><em>x</em></code>, SQL_IS_INTEGER)
+</p>
+<a name="wp50110"> </a><p class="pBodyIndent12pxBeforeAfter">
+where <code><em>x</em></code> is either 1, 2, or 3.
+</p>
+</ul></div>
+<a name="wp22078"> </a><p class="pBody">
+ 
+</p>
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.writeln(WWHRelatedTopicsInlineHTML());
+   // -->
+  </script>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    function  WWHDefineRelatedTopics(ParamRelatedTopics)
+    {
+      ParamRelatedTopics.fAdd("Connecting Using a Connection String", "devref", "useodbc6.html#wp533703");
+      ParamRelatedTopics.fAdd("ODBC Connection Attributes", "devref", "useodbc7.html#wp531412");
+    }
+
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

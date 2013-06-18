@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0.5.1025" />
+  <meta name="TEMPLATEBASE" content="WWH 3.0 Help Template" />
+  <meta name="LASTUPDATED" content="06/02/03 14:09:25" />
+  <title>Oracle8, Oracle9i</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+ <blockquote>
+<a name="wp800103"> </a><h2 class="pNewHTMLPage">
+
+</h2>
+<hr />
+<a name="wp784274"> </a><h3 class="pHeading2">
+Oracle8, Oracle9i
+</h3>
+<a name="wp893396"> </a><p class="pBody">
+The following table lists the data types that the ODBC driver supports for Oracle8 and Oracle9i:
+</p>
+<a name="wp893562"> </a><p class="pBody">
+</p><div align="left">
+<table border="1">
+  <caption><a name="wp893409"> </a><div class="pTableTitleBold">
+Table B-5.  Mapping Data Types to ODBC Data Types &#160;
+</div>
+</caption>
+  <tr align="center">    <th><a name="wp893415"> </a><div class="pCellHeading">
+Oracle8 Data Type
+</div>
+</th>
+    <th><a name="wp893417"> </a><div class="pCellHeading">
+Oracle9i Data Type
+</div>
+</th>
+    <th><a name="wp893419"> </a><div class="pCellHeading">
+ODBC Data Type
+</div>
+</th>
+</tr>
+  <tr align="left">    <td><a name="wp893421"> </a><div class="pCellBody">
+BFILE
+</div>
+</td>
+    <td><a name="wp893423"> </a><div class="pCellBody">
+BFILE
+</div>
+</td>
+    <td><a name="wp893425"> </a><div class="pCellBody">
+SQL_LONGVARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893427"> </a><div class="pCellBody">
+BLOB
+</div>
+</td>
+    <td><a name="wp893429"> </a><div class="pCellBody">
+BLOB
+</div>
+</td>
+    <td><a name="wp893431"> </a><div class="pCellBody">
+SQL_LONGVARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893433"> </a><div class="pCellBody">
+CHAR(size) 
+</div>
+</td>
+    <td><a name="wp893435"> </a><div class="pCellBody">
+CHAR(size) 
+</div>
+</td>
+    <td><a name="wp893437"> </a><div class="pCellBody">
+SQL_CHAR  Note 1
+</div>
+<a name="wp893438"> </a><div class="pCellBody">
+SQL_WCHAR  Note 2
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893440"> </a><div class="pCellBody">
+CLOB
+</div>
+</td>
+    <td><a name="wp893442"> </a><div class="pCellBody">
+CLOB
+</div>
+</td>
+    <td><a name="wp893444"> </a><div class="pCellBody">
+SQL_LONGVARCHAR  Note 5
+</div>
+<a name="wp893445"> </a><div class="pCellBody">
+SQL_WLONGVARCHAR  Note 2
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893447"> </a><div class="pCellBody">
+DATE
+</div>
+</td>
+    <td><a name="wp893449"> </a><div class="pCellBody">
+DATE
+</div>
+</td>
+    <td><a name="wp893451"> </a><div class="pCellBody">
+SQL_TYPE_TIMESTAMP
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893453"> </a><div class="pCellBody">
+LONG
+</div>
+</td>
+    <td><a name="wp893455"> </a><div class="pCellBody">
+LONG
+</div>
+</td>
+    <td><a name="wp893457"> </a><div class="pCellBody">
+SQL_LONGVARCHAR  Note 1
+</div>
+<a name="wp893458"> </a><div class="pCellBody">
+SQL_WLONGVARCHAR  Note 2
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893460"> </a><div class="pCellBody">
+LONG RAW
+</div>
+</td>
+    <td><a name="wp893462"> </a><div class="pCellBody">
+LONG RAW
+</div>
+</td>
+    <td><a name="wp893464"> </a><div class="pCellBody">
+SQL_LONGVARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893466"> </a><div class="pCellBody">
+NCHAR(size)
+</div>
+</td>
+    <td><a name="wp893468"> </a><div class="pCellBody">
+NCHAR(size)
+</div>
+</td>
+    <td><a name="wp893470"> </a><div class="pCellBody">
+SQL_CHAR  Note 3
+</div>
+<a name="wp893471"> </a><div class="pCellBody">
+SQL_WCHAR  Note 4
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893473"> </a><div class="pCellBody">
+NCLOB
+</div>
+</td>
+    <td><a name="wp893475"> </a><div class="pCellBody">
+NCLOB
+</div>
+</td>
+    <td><a name="wp893477"> </a><div class="pCellBody">
+SQL_LONGVARCHAR  Note 3
+</div>
+<a name="wp893478"> </a><div class="pCellBody">
+SQL_WLONGVARCHAR  Note 4
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893480"> </a><div class="pCellBody">
+NUMBER
+</div>
+</td>
+    <td><a name="wp893482"> </a><div class="pCellBody">
+NUMBER
+</div>
+</td>
+    <td><a name="wp893484"> </a><div class="pCellBody">
+SQL_FLOAT
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893486"> </a><div class="pCellBody">
+NUMBER(p,s)
+</div>
+</td>
+    <td><a name="wp893488"> </a><div class="pCellBody">
+NUMBER(p,s)
+</div>
+</td>
+    <td><a name="wp893490"> </a><div class="pCellBody">
+SQL_DECIMAL
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893492"> </a><div class="pCellBody">
+NVARCHAR2(size)
+</div>
+</td>
+    <td><a name="wp893494"> </a><div class="pCellBody">
+NVARCHAR2(size)
+</div>
+</td>
+    <td><a name="wp893496"> </a><div class="pCellBody">
+SQL_VARCHAR  Note 3
+</div>
+<a name="wp893497"> </a><div class="pCellBody">
+SQL_WVARCHAR  Note 4
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893499"> </a><div class="pCellBody">
+RAW(size)
+</div>
+</td>
+    <td><a name="wp893501"> </a><div class="pCellBody">
+RAW(size)
+</div>
+</td>
+    <td><a name="wp893503"> </a><div class="pCellBody">
+SQL_VARBINARY
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893505"> </a><div class="pCellBody">
+ROWID
+</div>
+</td>
+    <td><a name="wp893507"> </a><div class="pCellBody">
+ROWID
+</div>
+</td>
+    <td><a name="wp893509"> </a><div class="pCellBody">
+SQL_VARCHAR
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893511"> </a><div class="pCellBody">
+TIMESTAMP
+</div>
+</td>
+    <td><a name="wp893513"> </a><div class="pCellBody">
+TIMESTAMP
+</div>
+</td>
+    <td><a name="wp893515"> </a><div class="pCellBody">
+SQL_TIMESTAMP  Note 6
+</div>
+<a name="wp893516"> </a><div class="pCellBody">
+SQL_CHAR  Note 7
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893518"> </a><div class="pCellBody">
+--
+</div>
+</td>
+    <td><a name="wp893520"> </a><div class="pCellBody">
+TIMESTAMP WITH LOCAL TIME ZONE
+</div>
+</td>
+    <td><a name="wp893522"> </a><div class="pCellBody">
+SQL_TYPE_TIMESTAMP  Note 6
+</div>
+<a name="wp893523"> </a><div class="pCellBody">
+SQL_CHAR  Note 7
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893525"> </a><div class="pCellBody">
+--
+</div>
+</td>
+    <td><a name="wp893527"> </a><div class="pCellBody">
+TIMESTAMP WITH TIME ZONE
+</div>
+</td>
+    <td><a name="wp893529"> </a><div class="pCellBody">
+SQL_TYPE_TIMESTAMP  Note 6,8, 9
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893531"> </a><div class="pCellBody">
+--
+</div>
+</td>
+    <td><a name="wp893533"> </a><div class="pCellBody">
+TIMESTAMP WITH TIME ZONE
+</div>
+</td>
+    <td><a name="wp893535"> </a><div class="pCellBody">
+SQL_CHAR  Note 7, 8
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893537"> </a><div class="pCellBody">
+VARCHAR2(size)
+</div>
+</td>
+    <td><a name="wp893539"> </a><div class="pCellBody">
+VARCHAR2(size)
+</div>
+</td>
+    <td><a name="wp893541"> </a><div class="pCellBody">
+SQL_VARCHAR  Note 1
+</div>
+</td>
+</tr>
+  <tr align="left">    <td><a name="wp893543"> </a><div class="pCellBody">
+VARCHAR2(size)
+</div>
+</td>
+    <td><a name="wp893545"> </a><div class="pCellBody">
+VARCHAR2(size)
+</div>
+</td>
+    <td><a name="wp893547"> </a><div class="pCellBody">
+SQL_WVARCHAR  Note 2
+</div>
+</td>
+</tr>
+  <tr align="left">    <td colspan="3" rowspan="1"><a name="wp893549"> </a><div class="pCellBody">
+1 Not present when DataSourceReportChar=False, ServiceCodePage=Database and database character set is Unicode
+</div>
+<a name="wp893550"> </a><div class="pCellBody">
+2 Only present when ServiceCodePage=Database and database character set is Unicode
+</div>
+<a name="wp893551"> </a><div class="pCellBody">
+3 Not present when ServiceCodePage=Database and national character set is Unicode
+</div>
+<a name="wp893552"> </a><div class="pCellBody">
+4 Only present when ServiceCodePage=Database and national character set is Unicode
+</div>
+<a name="wp893553"> </a><div class="pCellBody">
+5 Not present when ServiceCodePage=Database and database character set is Unicode
+</div>
+<a name="wp893554"> </a><div class="pCellBody">
+6 Only present when DataSourceFetchTimestampAsString=False
+</div>
+<a name="wp893555"> </a><div class="pCellBody">
+7 Only present when DataSourceFetchTimestampAsString=True
+</div>
+<a name="wp893556"> </a><div class="pCellBody">
+8 Only present when DataSourceORAMapTSWTZ=True
+</div>
+<a name="wp893557"> </a><div class="pCellBody">
+9 The time zone value is not accessible (or can not be set). Instead, the client time zone is used either to pass to Oracle or to convert from the stored time zone value.
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+ </blockquote>
+
+ <hr />
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

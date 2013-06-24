@@ -1,0 +1,3 @@
+http://rightsconnectdem1.copyright.com/wsdl/CatalogGatewayImplService.wsdl 
+
+http://rightsconnectdem1.copyright.com/wsdl/CatalogGatewayImplService schema1.xsd 

@@ -1,0 +1,15 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:rig="http://rightsconnect.copyright.com">
+	<soapenv:Header/>
+		<soapenv:Body>
+		<rig:searchWorksV2>
+		<!--Optional:-->
+		<!--Optional:-->
+		<productStr>APS</productStr>
+		<!--Optional:-->
+		<!--Optional:-->
+		<title>The Boston Globe</title>
+		<!--Optional:-->
+		</rig:searchWorksV2>
+	</soapenv:Body>
+</soapenv:Envelope>

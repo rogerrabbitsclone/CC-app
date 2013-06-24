@@ -1,0 +1,19 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+<ns2:quickPriceResponse xmlns:ns2="http://rightsconnect.copyright.com">
+<ccc_response platform="rightsconnect" mode="LOCAL">
+<ccc_price_permission work_inst="3609110">
+<right>GRANTED</right>
+<terms>-- FOR DEMONSTRATION AND TESTING ONLY -- This application is currently directed at the
+Copyright Clearance Center's testing and demonstration server. No rights are actually being granted or orders generated
+by this software. -- Caution about "Only Globe Staff and Globe Correspondent materials may be used": Verification of
+authorship is your responsibility. Please check the author of the article before using this material. Contact the Globe
+directly for permission for articles authored by "Globe Correspondents", for photo use, or for editorials and articles by
+Ellen Goodman, David Shribman, and Dan Wasserman - 617-929-2659.</terms>
+<fee>703.00</fee>
+<per_page_fee>2.00</per_page_fee>
+</ccc_price_permission>
+</ccc_response>
+</ns2:quickPriceResponse>
+</S:Body>
+</S:Envelope>

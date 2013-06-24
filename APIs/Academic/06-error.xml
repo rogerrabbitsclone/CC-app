@@ -1,0 +1,43 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+<ns2:modifyOrderDetailResponse xmlns:ns2="http://rightsconnect.copyright.com">
+<ccc_response platform="rightsconnect" mode="LOCAL">
+<ccc_error id="355188">
+<error_code>CCC_100</error_code>
+<error_level>1</error_level>
+<error_detail>A required parameter value was not supplied. User Name is a required field.</error_detail>
+</ccc_error>
+<ccc_error id="355189">
+<error_code>CCC_100</error_code>
+<error_level>1</error_level>
+<error_detail>A required parameter value was not supplied. Password is a required field.</error_detail>
+</ccc_error>
+<ccc_error id="355190">
+<error_code>CCC_101</error_code>
+<error_level>1</error_level>
+<error_detail>Invalid input value. User-provided input does not match a required format. Order Detail
+Number must be in the range 1 to 999999999999999 (fifteen digits max).</error_detail>
+</ccc_error>
+<ccc_error id="355191">
+<error_code>CCC_101</error_code>
+<error_level>1</error_level>
+<error_detail>Invalid input value. User-provided input does not match a required format. Number of copies
+must be in the range 1 to 99999, or -999999 to indicate no change.</error_detail>
+</ccc_error>
+<ccc_error id="355192">
+<error_code>CCC_101</error_code>
+ 
+<error_level>1</error_level>
+<error_detail>Invalid input value. User-provided input does not match a required format. Number of pages
+must be in the range 1 to 99999, or -999999 to indicate no change.</error_detail>
+</ccc_error>
+<ccc_error id="355193">
+<error_code>CCC_100</error_code>
+<error_level>1</error_level>
+<error_detail>A required parameter value was not supplied. At least one modifiable parameter must be
+provided to modify an Order Detail.</error_detail>
+</ccc_error>
+</ccc_response>
+</ns2:modifyOrderDetailResponse>
+</S:Body>
+</S:Envelope>

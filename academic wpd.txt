@@ -1,0 +1,1 @@
+http://rightsconnectdem1.copyright.com/wsdl/AcademicGatewayImplService_schema1.xsd 

@@ -1,0 +1,11 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+<ns2:cancelOrderDetailResponse xmlns:ns2="http://rightsconnect.copyright.com">
+<ccc_response platform="rightsconnect" mode="LOCAL">
+<ccc_cancelled_order_detail id="19541640">
+<fee>0.00</fee>
+</ccc_cancelled_order_detail>
+</ccc_response>
+</ns2:cancelOrderDetailResponse>
+</S:Body>
+</S:Envelope>

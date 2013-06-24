@@ -1,0 +1,34 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+<ns2:searchWorksV2Response xmlns:ns2="http://rightsconnect.copyright.com">
+<ccc_response mode="DEV1" platform="rightsconnect">
+<ccc_search_ext_info_results>
+<total_match_count>1</total_match_count>
+<returned_match_count>1</returned_match_count>
+<work work_inst="122840823">
+<stdnum>07431791</stdnum>
+<title>Boston globe</title>
+<publisherName>GLOBE NEWSPAPER CO (MA)</publisherName>
+<author/>
+<edition/>
+<subtitle/>
+<pubType>Newspaper</pubType>
+<idnoTypeCode>VALISSN</idnoTypeCode>
+<editor/>
+<itemUrl>http://www.boston.com</itemUrl>
+<volume/>
+<pagination/>
+<series/>
+<language>English</language>
+<countryOfPublication>United States of America</countryOfPublication>
+<permission>
+<rightsHolder>GLOBE NEWSPAPER COMPANY - MA</rightsHolder>
+<year>1960-</year>
+<right>GRANTED</right>
+<terms_flag>Y</terms_flag>
+</permission>
+</work>	>
+</ccc_search_ext_info_results>
+</ccc_response>
+</ns2:searchWorksV2Response>
+</S:Body> </S:Envelope>

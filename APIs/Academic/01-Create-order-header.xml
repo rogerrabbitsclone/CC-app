@@ -1,0 +1,1 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">    <S:Body>       <ns2:createOrderHeaderResponse xmlns:ns2="http://rightsconnect.copyright.com">          <ccc_response platform="rightsconnect" mode="LOCAL">             <ccc_order_header id="2010722"/>          </ccc_response>       </ns2:createOrderHeaderResponse>    </S:Body> </S:Envelope> 

@@ -1,0 +1,15 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+<ns2:commitOrderDetailResponse xmlns:ns2="http://rightsconnect.copyright.com">
+<ccc_response platform="rightsconnect" mode="LOCAL">
+<ccc_order_detail invoiced="N" cancelled="N" id="19541635">
+<right>PENDING</right>
+<terms>-- FOR DEMONSTRATION AND TESTING ONLY -- This application is currently directed at the
+Copyright Clearance Center's testing and demonstration server. No rights are actually being granted or orders generated
+by this software. -- null</terms>
+<fee>1102.00</fee>
+</ccc_order_detail>
+</ccc_response>
+</ns2:commitOrderDetailResponse>
+</S:Body>
+</S:Envelope>

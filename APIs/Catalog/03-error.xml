@@ -1,0 +1,14 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+<ns2:searchWorksResponse xmlns:ns2="http://rightsconnect.copyright.com">
+<ccc_response platform="rightsconnect" mode="LOCAL">
+<ccc_error id="353974">
+<error_code>CCC_100</error_code>
+<error_level>1</error_level>
+<error_detail>A required parameter value was not supplied. A valid ISBN/ISSN, Title, or Publisher Name is
+required.</error_detail>
+</ccc_error>
+</ccc_response>
+</ns2:searchWorksResponse>
+</S:Body>
+</S:Envelope>

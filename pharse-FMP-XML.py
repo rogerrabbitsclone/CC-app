@@ -39,7 +39,7 @@ publicationYear = root[record-num][12].text
 numCopies = root[record-num][7].text
 numPages = root[record-num][19].text
 entireBook = 'N/A'
-
+print (productStr  cccWorkInst)
 ##Academic API
 
 #create order header
@@ -58,8 +58,24 @@ cccWorkInst = 'none'
 publicationYear = root[record-num][12].text
 numCopiesStudents = root[record-num][7].text
 numPages = root[record-num][17].text
-fromPage = 'str split'
-toPage = 'str split'
+fromPage = "str split from 'page numbers used'/root[record-num][11] "
+toPage = "str split from 'page numbers used'/root[record-num][11] "
+Stdnum = root[record-num][9].text
+title = root[record-num][4].text
+publisherName = root[record-num][13].text
+author = 'see logic for this'
+dateOfIssue = root[record-num][12].text
+volume = root[record-num][18].text
+edition = 'N/A'
+chapterArticle = root[record-num][1].text
+customerRefNum = 'none'
+
+
+
+
+
+
+
 
 
 print Stdnum
